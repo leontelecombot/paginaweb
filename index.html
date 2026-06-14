@@ -1,0 +1,885 @@
+                                                                                                                                                                                                                                                                                                                        <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="León Telecom - Fibra Óptica & Internet Inalámbrico de Alta Velocidad">
+    <meta name="keywords" content="internet, fibra óptica, inalámbrico, telecom, planes, servicios">
+    <title>León Telecom - Fibra Óptica & Inalámbrico</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/premium.css?v=23">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <meta property="og:image" content="images/logo.png">
+</head>
+<body>
+    <!-- Barra de progreso de lectura -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container-nav">
+            <div class="nav-brand">
+                                <!-- Menu logo: use the supplied logosololeon.png -->
+                                <img src="images/logosololeon.png" alt="León Telecom" class="logo" id="siteLogo">
+                                <!-- Fallback: keep vector file in assets/logo.svg if needed -->
+                <span class="brand-text">León Telecom</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link" data-section="home">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link" data-section="servicios">Servicios</a></li>
+                <li><a href="#quienes-somos" class="nav-link" data-section="quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#testimonios" class="nav-link" data-section="testimonios">Opiniones</a></li>
+                <li><a href="#productos" class="nav-link" data-section="productos">Productos</a></li>
+                <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero-section active">
+        <div class="hero-content">
+            <img src="images/logosololeon.png" alt="León Telecom" class="hero-logo" aria-hidden="true" data-reveal="zoom-in">
+            <h1 class="hero-title" data-reveal="rise" data-reveal-delay="0.1s">Internet de Alta Velocidad</h1>
+            <p class="hero-subtitle" data-reveal="fade-up" data-reveal-delay="0.3s">Fibra Óptica e Internet Inalámbrico con tecnología de punta</p>
+            <div class="hero-buttons" data-reveal="fade-up" data-reveal-delay="0.45s">
+                <a href="#servicios" class="btn btn-primary">Ver Planes</a>
+                <a href="#contacto" class="btn btn-secondary">Contactar</a>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="floating-element floating-1"></div>
+            <div class="floating-element floating-2"></div>
+            <div class="floating-element floating-3"></div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="section servicios-section">
+        <div class="container">
+            <h2 class="section-title" data-reveal="rise">Nuestros Servicios</h2>
+            <p class="section-subtitle" data-reveal="fade-up" data-reveal-delay="0.15s">Elige el plan perfecto para tus necesidades</p>
+            
+            <!-- Tabs para tipos de servicio -->
+            <div class="service-tabs">
+                <button class="tab-btn active" data-tab="inalambrico">
+                    <i class="fas fa-wifi"></i> Inalámbrico
+                </button>
+                <button class="tab-btn" data-tab="fibra">
+                    <i class="fas fa-bolt"></i> Fibra Óptica
+                </button>
+            </div>
+
+            <!-- Planes Inalámbricos -->
+            <div class="tab-content active" id="inalambrico">
+                <div class="planes-grid">
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <i class="fas fa-signal"></i>
+                            <h3>15 Mbps</h3>
+                        </div>
+                        <p class="plan-subtitle">Internet Inalámbrico</p>
+                        <div class="plan-price">$290</div>
+                        <p class="plan-period">/mes</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Internet Ilimitado</li>
+                            <li><i class="fas fa-check"></i> Con Antena</li>
+                            <li><i class="fas fa-check"></i> Velocidad hasta 15 Mbps</li>
+                            <li><i class="fas fa-check"></i> Soporte 24/7</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-plan">Contratar Ahora</a>
+                    </div>
+
+                    <div class="plan-card featured">
+                        <div class="ribbon-box"><span class="badge">Popular</span></div>
+                        <div class="plan-header">
+                            <i class="fas fa-signal"></i>
+                            <h3>20 Mbps</h3>
+                        </div>
+                        <p class="plan-subtitle">Internet Inalámbrico</p>
+                        <div class="plan-price">$340</div>
+                        <p class="plan-period">/mes</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Internet Ilimitado</li>
+                            <li><i class="fas fa-check"></i> Con Antena</li>
+                            <li><i class="fas fa-check"></i> Velocidad hasta 20 Mbps</li>
+                            <li><i class="fas fa-check"></i> Soporte Prioritario</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-plan">Contratar Ahora</a>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <i class="fas fa-signal"></i>
+                            <h3>30 Mbps</h3>
+                        </div>
+                        <p class="plan-subtitle">Internet Inalámbrico</p>
+                        <div class="plan-price">$440</div>
+                        <p class="plan-period">/mes</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Internet Ilimitado</li>
+                            <li><i class="fas fa-check"></i> Con Antena</li>
+                            <li><i class="fas fa-check"></i> Velocidad hasta 30 Mbps</li>
+                            <li><i class="fas fa-check"></i> Soporte VIP</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-plan">Contratar Ahora</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Planes Fibra Óptica -->
+            <div class="tab-content" id="fibra">
+                <div class="planes-grid">
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <i class="fas fa-bolt"></i>
+                            <h3>30 Mbps</h3>
+                        </div>
+                        <p class="plan-subtitle">LITE</p>
+                        <div class="plan-price">$289</div>
+                        <p class="plan-period">/mes</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Fibra Óptica Dedicada</li>
+                            <li><i class="fas fa-check"></i> Velocidad hasta 30 Mbps</li>
+                            <li><i class="fas fa-check"></i> Router Incluido</li>
+                            <li><i class="fas fa-check"></i> Soporte 24/7</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-plan">Contratar Ahora</a>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <i class="fas fa-bolt"></i>
+                            <h3>80 Mbps</h3>
+                        </div>
+                        <p class="plan-subtitle">BÁSICO</p>
+                        <div class="plan-price">$320</div>
+                        <p class="plan-period">/mes</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Fibra Óptica Dedicada</li>
+                            <li><i class="fas fa-check"></i> Velocidad hasta 80 Mbps</li>
+                            <li><i class="fas fa-check"></i> Router Premium</li>
+                            <li><i class="fas fa-check"></i> Soporte Prioritario</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-plan">Contratar Ahora</a>
+                    </div>
+
+                    <div class="plan-card featured">
+                        <div class="ribbon-box"><span class="badge">Recomendado</span></div>
+                        <div class="plan-header">
+                            <i class="fas fa-bolt"></i>
+                            <h3>150 Mbps</h3>
+                        </div>
+                        <p class="plan-subtitle">MEDIO</p>
+                        <div class="plan-price">$440</div>
+                        <p class="plan-period">/mes</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Fibra Óptica Dedicada</li>
+                            <li><i class="fas fa-check"></i> Velocidad hasta 150 Mbps</li>
+                            <li><i class="fas fa-check"></i> Router Premium</li>
+                            <li><i class="fas fa-check"></i> Soporte VIP</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-plan">Contratar Ahora</a>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <i class="fas fa-bolt"></i>
+                            <h3>200 Mbps</h3>
+                        </div>
+                        <p class="plan-subtitle">AVANZADO</p>
+                        <div class="plan-price">$560</div>
+                        <p class="plan-period">/mes</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Fibra Óptica Dedicada</li>
+                            <li><i class="fas fa-check"></i> Velocidad hasta 200 Mbps</li>
+                            <li><i class="fas fa-check"></i> Router Premium</li>
+                            <li><i class="fas fa-check"></i> Soporte Premium</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-plan">Contratar Ahora</a>
+                    </div>
+
+                    <div class="plan-card featured">
+                        <div class="ribbon-box"><span class="badge">Ultra</span></div>
+                        <div class="plan-header">
+                            <i class="fas fa-bolt"></i>
+                            <h3>300 Mbps</h3>
+                        </div>
+                        <p class="plan-subtitle">ULTRA</p>
+                        <div class="plan-price">$680</div>
+                        <p class="plan-period">/mes</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Fibra Óptica Dedicada</li>
+                            <li><i class="fas fa-check"></i> Velocidad hasta 300 Mbps</li>
+                            <li><i class="fas fa-check"></i> Router Premium</li>
+                            <li><i class="fas fa-check"></i> Soporte Dedicado</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-plan">Contratar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiénes Somos Section -->
+    <section id="quienes-somos" class="section quienes-somos-section">
+        <div class="container">
+            <h2 class="section-title" data-reveal="rise">Quiénes Somos</h2>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        <strong>León Telecom</strong> es una empresa dedicada a proporcionar soluciones de conectividad de alta velocidad 
+                        a través de fibra óptica e internet inalámbrico de última generación.
+                    </p>
+                    <p>
+                        Con años de experiencia en el sector de telecomunicaciones, nos comprometemos a ofrecer 
+                        servicios confiables, veloces y accesibles para hogares y negocios en la región.
+                    </p>
+                    <p>
+                        Nuestro equipo está dedicado a proporcionar la mejor experiencia de conectividad 
+                        con soporte técnico 24/7 y atención personalizada.
+                    </p>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Misión</h3>
+                        <p>
+                            Proporcionar acceso a internet de alta velocidad confiable y asequible, 
+                            conectando comunidades y transformando la forma en que las personas y negocios 
+                            se comunican e interactúan en el mundo digital.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Visión</h3>
+                        <p>
+                            Ser el proveedor de telecomunicaciones líder en la región, reconocido por nuestra 
+                            excelencia en servicio, innovación tecnológica y compromiso con la satisfacción del cliente.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Valores</h3>
+                        <p>
+                            Calidad, Integridad, Innovación, Compromiso con el Cliente y Responsabilidad Social. 
+                            Estos principios guían cada decisión que tomamos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="team-section">
+                    <h3>Por Qué Elegirnos</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <div>
+                                <h4>Velocidad Superior</h4>
+                                <p>Conexiones rápidas y estables con tecnología de fibra óptica</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-headset"></i>
+                            <div>
+                                <h4>Soporte 24/7</h4>
+                                <p>Equipo técnico disponible cuando nos necesitas</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-lock"></i>
+                            <div>
+                                <h4>Seguridad</h4>
+                                <p>Conexión segura para proteger tus datos</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <div>
+                                <h4>Precios Competitivos</h4>
+                                <p>Excelente relación calidad-precio en todos nuestros planes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios + Slider Liquid Glass -->
+    <section id="testimonios" class="section testimonios-section">
+        <div class="container">
+            <h2 class="section-title" data-reveal="rise">Clientes Satisfechos</h2>
+            <p class="section-subtitle" data-reveal="fade-up" data-reveal-delay="0.15s">Lo que opinan quienes ya navegan con León Telecom</p>
+
+            <!-- Slider de cristal -->
+            <div class="glass-slider" data-autoplay="6000" data-reveal="rise" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
+                <div class="glass-slider-viewport">
+                    <div class="glass-slide active" role="group" aria-roledescription="diapositiva">
+                        <span class="glass-slide-glint" aria-hidden="true"></span>
+                        <i class="fas fa-quote-left slide-icon" aria-hidden="true"></i>
+                        <p class="slide-quote">Desde que contraté la fibra de 150 Mbps trabajo desde casa sin un solo corte. La instalación fue rapidísima y el soporte siempre responde.</p>
+                        <div class="slide-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                        <div class="slide-author">María González <span>Fibra Óptica · San Pablo Huitzo</span></div>
+                    </div>
+
+                    <div class="glass-slide" role="group" aria-roledescription="diapositiva">
+                        <span class="glass-slide-glint" aria-hidden="true"></span>
+                        <i class="fas fa-quote-left slide-icon" aria-hidden="true"></i>
+                        <p class="slide-quote">Vivo en una zona donde nadie me daba internet. El plan inalámbrico con antena me cambió la vida, va estable todo el día.</p>
+                        <div class="slide-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                        <div class="slide-author">Jorge Ramírez <span>Inalámbrico 20 Mbps · Oaxaca</span></div>
+                    </div>
+
+                    <div class="glass-slide" role="group" aria-roledescription="diapositiva">
+                        <span class="glass-slide-glint" aria-hidden="true"></span>
+                        <i class="fas fa-quote-left slide-icon" aria-hidden="true"></i>
+                        <p class="slide-quote">Excelente relación precio-velocidad. Conectamos toda la familia, las tele y el negocio sin que se trabe. 100% recomendados.</p>
+                        <div class="slide-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                        <div class="slide-author">Lucía Hernández <span>Fibra Óptica 300 Mbps · Negocio</span></div>
+                    </div>
+                </div>
+
+                <button class="glass-slider-arrow prev" type="button" aria-label="Testimonio anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <button class="glass-slider-arrow next" type="button" aria-label="Siguiente testimonio"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+
+                <div class="glass-slider-dots" role="tablist" aria-label="Seleccionar testimonio"></div>
+                <div class="glass-slider-progress" aria-hidden="true"><span></span></div>
+            </div>
+
+            <!-- Banda de estadísticas con contadores -->
+            <div class="stats-band">
+                <div class="stat-card" data-reveal="fade-up">
+                    <div class="stat-number"><span data-count="1200" data-suffix="+">0</span></div>
+                    <div class="stat-label">Clientes conectados</div>
+                </div>
+                <div class="stat-card" data-reveal="fade-up" data-reveal-delay="0.1s">
+                    <div class="stat-number"><span data-count="99.9" data-suffix="%">0</span></div>
+                    <div class="stat-label">Tiempo en línea</div>
+                </div>
+                <div class="stat-card" data-reveal="fade-up" data-reveal-delay="0.2s">
+                    <div class="stat-number"><span data-count="300" data-suffix=" Mbps">0</span></div>
+                    <div class="stat-label">Velocidad máxima</div>
+                </div>
+                <div class="stat-card" data-reveal="fade-up" data-reveal-delay="0.3s">
+                    <div class="stat-number"><span data-count="24" data-suffix="/7">0</span></div>
+                    <div class="stat-label">Soporte técnico</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos & Accesorios -->
+    <section id="productos" class="section productos-section">
+        <div class="container">
+            <h2 class="section-title" data-reveal="rise">Productos &amp; Accesorios</h2>
+            <p class="section-subtitle" data-reveal="rise">Tecnología disponible en nuestra vitrina. Cotiza al instante por WhatsApp.</p>
+
+            <div class="product-filters" data-reveal="rise">
+                <button class="prod-filter active" type="button" data-cat="all">Todos</button>
+                <button class="prod-filter" type="button" data-cat="Streaming">Streaming</button>
+                <button class="prod-filter" type="button" data-cat="Internet">Internet</button>
+                <button class="prod-filter" type="button" data-cat="Cómputo">Cómputo</button>
+                <button class="prod-filter" type="button" data-cat="TV">TV</button>
+                <button class="prod-filter" type="button" data-cat="Cables">Cables</button>
+                <button class="prod-filter" type="button" data-cat="Iluminación">Iluminación</button>
+                <button class="prod-filter" type="button" data-cat="Limpieza">Limpieza</button>
+            </div>
+
+            <div class="products-grid">
+                <article class="product-card" data-cat="Streaming" data-reveal="rise" data-reveal-delay="0s">
+                    <div class="product-img">
+                        <img src="images/products/ROkuplus4K.jpeg" alt="Roku Streaming Stick Plus 4K" loading="lazy">
+                        <span class="product-cat">Streaming</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Roku Streaming Stick Plus 4K</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$720</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Roku%20Streaming%20Stick%20Plus%204K%20(%24720).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Roku Streaming Stick Plus 4K por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Streaming" data-reveal="rise" data-reveal-delay="0.08s">
+                    <div class="product-img">
+                        <img src="images/products/RokuStickHD.jpeg" alt="Roku Streaming Stick HD" loading="lazy">
+                        <span class="product-cat">Streaming</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Roku Streaming Stick HD</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$680</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Roku%20Streaming%20Stick%20HD%20(%24680).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Roku Streaming Stick HD por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Internet" data-reveal="rise" data-reveal-delay="0.16s">
+                    <div class="product-img">
+                        <img src="images/products/extensorderangowifitplink.jpeg" alt="Extensor de rango Wi-Fi TP-Link N300" loading="lazy">
+                        <span class="product-cat">Internet</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Extensor de rango Wi-Fi TP-Link N300</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$450</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Extensor%20de%20rango%20Wi-Fi%20TP-Link%20N300%20(%24450).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Extensor de rango Wi-Fi TP-Link N300 por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Internet" data-reveal="rise" data-reveal-delay="0.24s">
+                    <div class="product-img">
+                        <img src="images/products/adaptadorwifimini.jpeg" alt="Adaptador USB Wi-Fi TP-Link AC600" loading="lazy">
+                        <span class="product-cat">Internet</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Adaptador USB Wi-Fi TP-Link AC600</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$220</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Adaptador%20USB%20Wi-Fi%20TP-Link%20AC600%20(%24220).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Adaptador USB Wi-Fi TP-Link AC600 por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Cómputo" data-reveal="rise" data-reveal-delay="0s">
+                    <div class="product-img">
+                        <img src="images/products/tintaoriginalHP4pz.jpeg" alt="Tinta original HP GT52/GT53 (4 pzas)" loading="lazy">
+                        <span class="product-cat">Cómputo</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Tinta original HP GT52/GT53 (4 pzas)</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$750</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Tinta%20original%20HP%20GT52%2FGT53%20(4%20pzas)%20(%24750).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Tinta original HP GT52/GT53 (4 pzas) por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Cómputo" data-reveal="rise" data-reveal-delay="0.08s">
+                    <div class="product-img">
+                        <img src="images/products/USB%20adata%2032Gb.jpeg" alt="Memoria USB ADATA 32GB (USB 3.2)" loading="lazy">
+                        <span class="product-cat">Cómputo</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Memoria USB ADATA 32GB (USB 3.2)</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$90</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Memoria%20USB%20ADATA%2032GB%20(USB%203.2)%20(%2490).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Memoria USB ADATA 32GB (USB 3.2) por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Cómputo" data-reveal="rise" data-reveal-delay="0.16s">
+                    <div class="product-img">
+                        <img src="images/products/UBS%20adata%2064%20Gb.jpeg" alt="Memoria USB ADATA 64GB (USB 2.0)" loading="lazy">
+                        <span class="product-cat">Cómputo</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Memoria USB ADATA 64GB (USB 2.0)</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$140</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Memoria%20USB%20ADATA%2064GB%20(USB%202.0)%20(%24140).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Memoria USB ADATA 64GB (USB 2.0) por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Cómputo" data-reveal="rise" data-reveal-delay="0.24s">
+                    <div class="product-img">
+                        <img src="images/products/mouseugreen.jpeg" alt="Mouse inalámbrico UGREEN" loading="lazy">
+                        <span class="product-cat">Cómputo</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Mouse inalámbrico UGREEN</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$190</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Mouse%20inal%C3%A1mbrico%20UGREEN%20(%24190).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Mouse inalámbrico UGREEN por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Cómputo" data-reveal="rise" data-reveal-delay="0s">
+                    <div class="product-img">
+                        <img src="images/products/baseenfriadoraacteck.jpeg" alt="Base enfriadora ACTECK (laptop 15&quot;)" loading="lazy">
+                        <span class="product-cat">Cómputo</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Base enfriadora ACTECK (laptop 15&quot;)</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$180</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Base%20enfriadora%20ACTECK%20(laptop%2015%22)%20(%24180).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Base enfriadora ACTECK (laptop 15&quot;) por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="TV" data-reveal="rise" data-reveal-delay="0.08s">
+                    <div class="product-img">
+                        <img src="images/products/soporteparatvde13pulgadashassta42pulgadas.jpeg" alt="Soporte para TV 13&quot;-42&quot; (full motion)" loading="lazy">
+                        <span class="product-cat">TV</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Soporte para TV 13&quot;-42&quot; (full motion)</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$400</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Soporte%20para%20TV%2013%22-42%22%20(full%20motion)%20(%24400).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Soporte para TV 13&quot;-42&quot; (full motion) por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Cables" data-reveal="rise" data-reveal-delay="0.16s">
+                    <div class="product-img">
+                        <img src="images/products/AdapatadorUSBCaUSBA.jpeg" alt="Adaptador UGREEN USB-C a USB-A" loading="lazy">
+                        <span class="product-cat">Cables</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Adaptador UGREEN USB-C a USB-A</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$150</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Adaptador%20UGREEN%20USB-C%20a%20USB-A%20(%24150).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Adaptador UGREEN USB-C a USB-A por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Cables" data-reveal="rise" data-reveal-delay="0.24s">
+                    <div class="product-img">
+                        <img src="images/products/adaptadorUSBAaUSBC.jpeg" alt="Adaptador UGREEN USB-A a USB-C" loading="lazy">
+                        <span class="product-cat">Cables</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Adaptador UGREEN USB-A a USB-C</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$175</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Adaptador%20UGREEN%20USB-A%20a%20USB-C%20(%24175).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Adaptador UGREEN USB-A a USB-C por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Cables" data-reveal="rise" data-reveal-delay="0s">
+                    <div class="product-img">
+                        <img src="images/products/cableligthningacugreen.jpeg" alt="Cable UGREEN USB-C a Lightning (iPhone) 20W" loading="lazy">
+                        <span class="product-cat">Cables</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Cable UGREEN USB-C a Lightning (iPhone) 20W</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$280</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Cable%20UGREEN%20USB-C%20a%20Lightning%20(iPhone)%2020W%20(%24280).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Cable UGREEN USB-C a Lightning (iPhone) 20W por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Cables" data-reveal="rise" data-reveal-delay="0.08s">
+                    <div class="product-img">
+                        <img src="images/products/cableshdmisuperspeed.jpeg" alt="Cable HDMI Manhattan 4K 1.8m" loading="lazy">
+                        <span class="product-cat">Cables</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Cable HDMI Manhattan 4K 1.8m</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$80</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Cable%20HDMI%20Manhattan%204K%201.8m%20(%2480).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Cable HDMI Manhattan 4K 1.8m por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Cables" data-reveal="rise" data-reveal-delay="0.16s">
+                    <div class="product-img">
+                        <img src="images/products/cabletipocatipocugreen.jpeg" alt="Cable UGREEN USB-C a USB-C 60W" loading="lazy">
+                        <span class="product-cat">Cables</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Cable UGREEN USB-C a USB-C 60W</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$150</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Cable%20UGREEN%20USB-C%20a%20USB-C%2060W%20(%24150).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Cable UGREEN USB-C a USB-C 60W por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Cables" data-reveal="rise" data-reveal-delay="0.24s">
+                    <div class="product-img">
+                        <img src="images/products/convertidordeHDMIaRCAsteren.jpeg" alt="Convertidor Steren HDMI a RCA" loading="lazy">
+                        <span class="product-cat">Cables</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Convertidor Steren HDMI a RCA</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$320</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Convertidor%20Steren%20HDMI%20a%20RCA%20(%24320).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Convertidor Steren HDMI a RCA por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Iluminación" data-reveal="rise" data-reveal-delay="0s">
+                    <div class="product-img">
+                        <img src="images/products/reflectorsolar100W.jpeg" alt="Reflector solar JWL 100W (2 pzas)" loading="lazy">
+                        <span class="product-cat">Iluminación</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Reflector solar JWL 100W (2 pzas)</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$1,300</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Reflector%20solar%20JWL%20100W%20(2%20pzas)%20(%241%2C300).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Reflector solar JWL 100W (2 pzas) por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Iluminación" data-reveal="rise" data-reveal-delay="0.08s">
+                    <div class="product-img">
+                        <img src="images/products/reflectorsolar.jpeg" alt="Reflector solar JWL 200W (2 pzas)" loading="lazy">
+                        <span class="product-cat">Iluminación</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Reflector solar JWL 200W (2 pzas)</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$1,500</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Reflector%20solar%20JWL%20200W%20(2%20pzas)%20(%241%2C500).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Reflector solar JWL 200W (2 pzas) por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Iluminación" data-reveal="rise" data-reveal-delay="0.16s">
+                    <div class="product-img">
+                        <img src="images/products/TIRALED5M.jpeg" alt="Tira LED JWL 5m (12V)" loading="lazy">
+                        <span class="product-cat">Iluminación</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Tira LED JWL 5m (12V)</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$250</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Tira%20LED%20JWL%205m%20(12V)%20(%24250).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Tira LED JWL 5m (12V) por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Iluminación" data-reveal="rise" data-reveal-delay="0.24s">
+                    <div class="product-img">
+                        <img src="images/products/luminariopublico150W.jpeg" alt="Luminario público JWL 150W LED (con fotocelda)" loading="lazy">
+                        <span class="product-cat">Iluminación</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Luminario público JWL 150W LED (con fotocelda)</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$1,050</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Luminario%20p%C3%BAblico%20JWL%20150W%20LED%20(con%20fotocelda)%20(%241%2C050).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Luminario público JWL 150W LED (con fotocelda) por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card" data-cat="Limpieza" data-reveal="rise" data-reveal-delay="0s">
+                    <div class="product-img">
+                        <img src="images/products/espumalimpiadoraslimpoo.jpeg" alt="Espuma limpiadora SILIMEX SILIMPO 454ml" loading="lazy">
+                        <span class="product-cat">Limpieza</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Espuma limpiadora SILIMEX SILIMPO 454ml</h3>
+                        <div class="product-foot">
+                            <span class="product-price">$120</span>
+                            <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%3A%20Espuma%20limpiadora%20SILIMEX%20SILIMPO%20454ml%20(%24120).%20%C2%BFEst%C3%A1%20disponible%3F" class="btn-product" target="_blank" rel="noopener noreferrer" aria-label="Cotizar Espuma limpiadora SILIMEX SILIMPO 454ml por WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="section contacto-section">
+        <div class="container">
+            <h2 class="section-title" data-reveal="rise">Contáctanos</h2>
+            <p class="section-subtitle" data-reveal="fade-up" data-reveal-delay="0.15s">¿Tienes preguntas? Nos encantaría escucharte</p>
+
+            <div class="contacto-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Teléfono</h3>
+                        <a href="tel:+529511697346">951 169 7346</a>
+                        <p class="small">También disponible en WhatsApp</p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <a href="mailto:leonwirelesscontacto@gmail.com">leonwirelesscontacto@gmail.com</a>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Ubicación</h3>
+                        <p>CARRETERA INTERNACIONAL SN SEGUNDA SECCIÓN, 68220 OAXACA DE JUÁREZ, Oax.</p>
+                        <p class="small">Plus Code: 74M5+2F San Pablo Huitzo, Oaxaca</p>
+                        <div class="map-links">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=74M5%2B2F%20San%20Pablo%20Huitzo%2C%20Oaxaca" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Indicaciones</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=74M5%2B2F%20San%20Pablo%20Huitzo%2C%20Oaxaca" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Abrir en Maps</a>
+                        </div>
+                        <div class="minimap">
+                            <iframe src="https://www.google.com/maps?q=74M5%2B2F%20San%20Pablo%20Huitzo%2C%20Oaxaca&output=embed" frameborder="0" allowfullscreen="" aria-label="Mapa de ubicación" loading="lazy"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="info-card schedule-card" id="scheduleCard">
+                        <i class="fas fa-clock"></i>
+                        <h3>Horario</h3>
+                        <div id="openNow" class="open-now" aria-live="polite">Cargando...</div>
+                        <div id="todayHours" class="today-hours" aria-live="polite"></div>
+                        <div id="nextOpen" class="next-open" aria-live="polite"></div>
+                        <button id="toggleSchedule" class="btn btn-outline" aria-expanded="false">Ver Horarios</button>
+                        <ul class="schedule-list" id="scheduleList" aria-hidden="true">
+                            <li data-day="1"><span class="day">Lunes</span><span class="hours">10:00 - 15:00<br>16:00 - 20:00</span></li>
+                            <li data-day="2"><span class="day">Martes</span><span class="hours">10:00 - 15:00<br>16:00 - 20:00</span></li>
+                            <li data-day="3"><span class="day">Miércoles</span><span class="hours">10:00 - 15:00<br>16:00 - 20:00</span></li>
+                            <li data-day="4"><span class="day">Jueves</span><span class="hours">10:00 - 15:00<br>16:00 - 20:00</span></li>
+                            <li data-day="5"><span class="day">Viernes</span><span class="hours">10:00 - 15:00<br>16:00 - 20:00</span></li>
+                            <li data-day="6"><span class="day">Sábado</span><span class="hours">10:00 - 15:00<br>16:00 - 18:00</span></li>
+                            <li data-day="0"><span class="day">Domingo</span><span class="hours">10:00 - 14:00</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <select id="asunto" name="asunto" required>
+                                <option value="">Selecciona un asunto</option>
+                                <option value="contratar">Quiero contratar</option>
+                                <option value="soporte">Necesito soporte</option>
+                                <option value="informacion">Necesito información</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="social-media">
+                <h3>Síguenos en Redes Sociales</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61554878936846" target="_blank" rel="noopener noreferrer" class="social-link facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>León Telecom</h4>
+                    <p>Internet de alta velocidad con tecnología de punta en fibra óptica e inalámbrico.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicio al Cliente</h4>
+                    <p>Teléfono: <a href="tel:+529511697346">951 169 7346</a></p>
+                    <p>Email: <a href="mailto:leonwirelesscontacto@gmail.com">leonwirelesscontacto@gmail.com</a></p>
+                    <p>Dirección: CARRETERA INTERNACIONAL SN SEGUNDA SECCIÓN, 68220 OAXACA DE JUÁREZ, Oax.</p>
+                    <p>Plus Code: 74M5+2F San Pablo Huitzo, Oaxaca</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 León Telecom. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botones flotantes (liquid glass) -->
+    <div class="fab-stack">
+        <a href="https://wa.me/529511697346?text=Hola%2C%20me%20interesa%20contratar%20internet%20de%20Le%C3%B3n%20Telecom"
+           class="floatbtn fab-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <button class="floatbtn fab-top" type="button" aria-label="Volver arriba">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <script src="js/script.js?v=23"></script>
+    <script src="js/premium.js?v=23"></script>
+    <!-- Schedule modal (móvil) -->
+    <div id="scheduleModal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" id="scheduleModalBackdrop"></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="scheduleModalTitle">
+            <button class="modal-close" id="closeScheduleModal" aria-label="Cerrar horarios">×</button>
+            <h3 id="scheduleModalTitle">Horarios</h3>
+            <div class="modal-content">
+                <ul class="modal-schedule-list" id="modalScheduleList"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

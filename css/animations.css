@@ -1,0 +1,496 @@
+/* ============================
+   ANIMACIONES ULTRA PROFESIONALES
+   Y EFFECTOS DE LIQUID GLASS
+   ============================ */
+
+/* ========== PULSOS Y BRILLO ========== */
+
+@keyframes enhanced-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px rgba(0, 212, 212, 0.3));
+    }
+    50% {
+        opacity: 0.85;
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 20px rgba(0, 212, 212, 0.7));
+    }
+}
+
+@keyframes enhanced-glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(0, 212, 212, 0.3), 0 0 15px rgba(0, 212, 212, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 212, 212, 0.6), 0 0 50px rgba(0, 212, 212, 0.4);
+    }
+}
+
+@keyframes text-glow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(0, 212, 212, 0.3), 0 0 20px rgba(0, 212, 212, 0.1);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 212, 212, 0.6), 0 0 40px rgba(0, 212, 212, 0.4);
+    }
+}
+
+/* ========== MOVIMIENTO FLUIDO ========== */
+
+@keyframes liquid-float {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-30px) translateX(15px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-15px) translateX(0px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-25px) translateX(-10px) rotate(-5deg);
+    }
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+}
+
+@keyframes wave-motion {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+@keyframes swing {
+    20% {
+        transform: rotate(15deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    60% {
+        transform: rotate(5deg);
+    }
+    80% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* ========== ENTRADA STAGGERED ========== */
+
+@keyframes cascade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes fade-cascade {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========== EFECTOS 3D ========== */
+
+@keyframes rotate-3d-advanced {
+    0% {
+        transform: perspective(1000px) rotateX(0) rotateY(0) rotateZ(0);
+    }
+    50% {
+        transform: perspective(1000px) rotateX(15deg) rotateY(15deg) rotateZ(5deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateX(0) rotateY(0) rotateZ(0);
+    }
+}
+
+@keyframes flip {\n    0% {\n        transform: rotateY(0);\n    }\n    100% {\n        transform: rotateY(360deg);\n    }\n}\n\n/* ========== SHINE/SHIMMER ========== */\n\n@keyframes shimmer-wave {\n    0% {\n        background-position: -1000px 0;\n    }\n    100% {\n        background-position: 1000px 0;\n    }\n}\n\n@keyframes liquid-shine {\n    0% {\n        left: -100%;\n        opacity: 0;\n    }\n    50% {\n        opacity: 1;\n    }\n    100% {\n        left: 100%;\n        opacity: 0;\n    }\n}\n\n/* ========== BREATHING & PULSE ADVANCED ========== */\n\n@keyframes breathing {\n    0% {\n        transform: scale(1);\n        opacity: 1;\n    }\n    50% {\n        transform: scale(1.1);\n        opacity: 0.9;\n    }\n    100% {\n        transform: scale(1);\n        opacity: 1;\n    }\n}\n\n@keyframes heartbeat {\n    0%, 100% {\n        transform: scale(1);\n    }\n    25% {\n        transform: scale(1.3);\n    }\n    50% {\n        transform: scale(1);\n    }\n}\n\n/* ========== APLICACIÓN DE CLASES ========== */\n\n.animate-enhanced-glow {\n    animation: enhanced-glow 3s ease-in-out infinite;\n}\n\n.animate-text-glow {\n    animation: text-glow 3s ease-in-out infinite;\n}\n\n.animate-liquid-float {\n    animation: liquid-float 8s ease-in-out infinite;\n}\n\n.animate-wave {\n    animation: wave-motion 2s ease-in-out infinite;\n}\n\n.animate-swing {\n    animation: swing 2s ease-in-out infinite;\n}\n\n.animate-cascade-in {\n    animation: cascade-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);\n}\n\n.animate-fade-cascade {\n    animation: fade-cascade 0.8s ease-out;\n}\n\n.animate-3d {\n    animation: rotate-3d-advanced 6s ease-in-out infinite;\n}\n\n.animate-flip {\n    animation: flip 2s ease-in-out infinite;\n}\n\n.animate-shimmer {\n    animation: shimmer-wave 2s infinite;\n}\n\n.animate-breathing {\n    animation: breathing 3s ease-in-out infinite;\n}\n\n.animate-heartbeat {\n    animation: heartbeat 1.5s ease-in-out infinite;\n}\n\n/* ========== HOVER EFFECTS ADVANCED ========== */\n\n.hover-lift-advanced {\n    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);\n}\n\n.hover-lift-advanced:hover {\n    transform: translateY(-12px) scale(1.08);\n    box-shadow: 0 25px 60px rgba(0, 212, 212, 0.4);\n    filter: drop-shadow(0 0 20px rgba(0, 212, 212, 0.5));\n}\n\n.hover-glow-advanced {\n    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);\n}\n\n.hover-glow-advanced:hover {\n    filter: drop-shadow(0 0 20px rgba(0, 212, 212, 0.7));\n    transform: scale(1.05);\n}\n\n.hover-rotate {\n    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);\n}\n\n.hover-rotate:hover {\n    transform: rotate(5deg) scale(1.05);\n}\n\n/* ========== RIPPLE EFFECT ========== */\n\n@keyframes ripple-expand {\n    0% {\n        transform: scale(0);\n        opacity: 1;\n    }\n    100% {\n        transform: scale(4);\n        opacity: 0;\n    }\n}\n\n/* ========== ENTRANCE ANIMATIONS ========== */\n\n@keyframes blur-fade-in {\n    0% {\n        opacity: 0;\n        filter: blur(15px);\n    }\n    100% {\n        opacity: 1;\n        filter: blur(0);\n    }\n}\n\n@keyframes scale-in {\n    0% {\n        opacity: 0;\n        transform: scale(0.8);\n    }\n    100% {\n        opacity: 1;\n        transform: scale(1);\n    }\n}\n\n@keyframes slide-rotate-in {\n    0% {\n        opacity: 0;\n        transform: translateY(30px) rotate(-5deg);\n    }\n    100% {\n        opacity: 1;\n        transform: translateY(0) rotate(0);\n    }\n}\n\n/* ========== STAGGER ANIMATIONS ========== */\n\n.stagger-1 { animation-delay: 0.1s; }\n.stagger-2 { animation-delay: 0.2s; }\n.stagger-3 { animation-delay: 0.3s; }\n.stagger-4 { animation-delay: 0.4s; }\n.stagger-5 { animation-delay: 0.5s; }\n.stagger-6 { animation-delay: 0.6s; }\n\n/* ========== COLOR ANIMATIONS ========== */\n\n@keyframes color-cycle {\n    0% {\n        color: var(--color-secondary);\n    }\n    50% {\n        color: var(--color-accent);\n    }\n    100% {\n        color: var(--color-secondary);\n    }\n}\n\n@keyframes gradient-shift {\n    0% {\n        background-position: 0% 50%;\n    }\n    50% {\n        background-position: 100% 50%;\n    }\n    100% {\n        background-position: 0% 50%;\n    }\n}\n\n/* ========== BORDER ANIMATIONS ========== */\n\n@keyframes border-glow {\n    0%, 100% {\n        border-color: rgba(0, 212, 212, 0.2);\n        box-shadow: 0 0 10px rgba(0, 212, 212, 0.1);\n    }\n    50% {\n        border-color: rgba(0, 212, 212, 0.8);\n        box-shadow: 0 0 30px rgba(0, 212, 212, 0.5);\n    }\n}\n\n@keyframes shadow-pulse {\n    0%, 100% {\n        box-shadow: 0 0 5px rgba(0, 212, 212, 0.1);\n    }\n    50% {\n        box-shadow: 0 0 25px rgba(0, 212, 212, 0.4);\n    }\n}\n\n/* ========== MORPHING SHAPES ========== */\n\n@keyframes morph {\n    0% {\n        border-radius: 50% 50% 50% 50%;\n    }\n    50% {\n        border-radius: 30% 70% 70% 30%;\n    }\n    100% {\n        border-radius: 50% 50% 50% 50%;\n    }\n}\n\n/* ========== CONTENT ANIMATIONS ========== */\n\n@keyframes pop-in {\n    0% {\n        opacity: 0;\n        transform: scale(0.5) rotate(-10deg);\n    }\n    100% {\n        opacity: 1;\n        transform: scale(1) rotate(0deg);\n    }\n}\n\n@keyframes bounce-in {\n    0% {\n        opacity: 0;\n        transform: translateY(-50px);\n    }\n    50% {\n        opacity: 1;\n        transform: translateY(10px);\n    }\n    100% {\n        opacity: 1;\n        transform: translateY(0);\n    }\n}\n\n/* ========== LIQUID GLASS EFFECTS ========== */\n\n.glass-effect-1 {\n    backdrop-filter: blur(20px);\n    background: rgba(255, 255, 255, 0.1);\n    border: 1px solid rgba(0, 212, 212, 0.2);\n    box-shadow: 0 8px 32px rgba(0, 212, 212, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);\n}\n\n.glass-effect-2 {\n    backdrop-filter: blur(30px);\n    background: rgba(0, 26, 77, 0.4);\n    border: 1px solid rgba(0, 212, 212, 0.25);\n    box-shadow: 0 8px 32px rgba(0, 212, 212, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n}\n\n.glass-effect-premium {\n    backdrop-filter: blur(40px);\n    background: rgba(255, 255, 255, 0.15);\n    border: 2px solid rgba(0, 212, 212, 0.3);\n    box-shadow: \n        0 20px 60px rgba(0, 212, 212, 0.3),\n        0 0 60px rgba(0, 212, 212, 0.1),\n        inset 0 1px 0 rgba(255, 255, 255, 0.4);\n}\n\n/* ========== RESPONSIVE ANIMATIONS ========== */\n\n@media (max-width: 768px) {\n    @keyframes mobile-bounce {\n        0%, 100% {\n            transform: translateY(0);\n        }\n        50% {\n            transform: translateY(-8px);\n        }\n    }\n    \n    .animate-liquid-float {\n        animation: mobile-bounce 2s ease-in-out infinite;\n    }\n}\n
+/* ========== SHINE Y BRILLO ========== */
+
+@keyframes shimmer-wave {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes liquid-shine {
+    0%, 100% {
+        opacity: 0;
+        left: -100%;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+@keyframes border-glow-pulse {
+    0%, 100% {
+        border-color: rgba(0, 212, 212, 0.3);
+        box-shadow: 0 0 10px rgba(0, 212, 212, 0.2);
+    }
+    50% {
+        border-color: rgba(0, 212, 212, 0.8);
+        box-shadow: 0 0 30px rgba(0, 212, 212, 0.6);
+    }
+}
+
+/* ========== RESPIRACIÓN ORGÁNICA ========== */
+
+@keyframes breathing {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.15);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.15);
+    }
+    70% {
+        transform: scale(1);
+    }
+}
+
+/* ========== TRANSFORMACIÓN ========== */
+
+@keyframes morph {
+    0%, 100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+}
+
+@keyframes color-cycle {
+    0% {
+        color: #00d4d4;
+    }
+    50% {
+        color: #00ffff;
+    }
+    100% {
+        color: #00d4d4;
+    }
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ========== ENTRADA AVANZADA ========== */
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes bounce-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blur-fade-in {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+}
+
+@keyframes slide-rotate-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) rotate(-90deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+/* ========== EFECTO FLIP ========== */
+
+@keyframes flip {
+    0% {
+        transform: perspective(400px) rotateY(0);
+    }
+    100% {
+        transform: perspective(400px) rotateY(360deg);
+    }
+}
+
+@keyframes flip-in-x {
+    0% {
+        opacity: 0;
+        transform: perspective(400px) rotateX(90deg);
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(400px) rotateX(0deg);
+    }
+}
+
+/* ========== SOMBRA DINÁMICA ========== */
+
+@keyframes shadow-pulse {
+    0%, 100% {
+        box-shadow: 0 5px 15px rgba(0, 212, 212, 0.2);
+    }
+    50% {
+        box-shadow: 0 15px 40px rgba(0, 212, 212, 0.5);
+    }
+}
+
+@keyframes glow-expand {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 212, 212, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 212, 212, 0.6), 0 0 40px rgba(0, 212, 212, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 212, 212, 0.3);
+    }
+}
+
+/* ========== CLASES DE EFECTO GLASS ========== */
+
+.glass-effect-1 {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 212, 212, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 212, 212, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.glass-effect-2 {
+    backdrop-filter: blur(30px);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(0, 212, 212, 0.25);
+    box-shadow: 
+        0 12px 48px rgba(0, 212, 212, 0.15),
+        0 0 30px rgba(0, 212, 212, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.glass-effect-premium {
+    backdrop-filter: blur(40px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(0, 212, 212, 0.3);
+    box-shadow: 
+        0 20px 60px rgba(0, 212, 212, 0.3),
+        0 0 60px rgba(0, 212, 212, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* ========== CLASES DE ANIMACIÓN DIRECTA ========== */
+
+.animate-enhanced-glow {
+    animation: enhanced-glow 3s ease-in-out infinite;
+}
+
+.animate-text-glow {
+    animation: text-glow 3s ease-in-out infinite;
+}
+
+.animate-liquid-float {
+    animation: liquid-float 8s ease-in-out infinite;
+}
+
+.animate-wave-motion {
+    animation: wave-motion 3s ease-in-out infinite;
+}
+
+.animate-cascade-in {
+    animation: cascade-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-fade-cascade {
+    animation: fade-cascade 0.8s ease-out forwards;
+}
+
+.animate-3d-rotate {
+    animation: rotate-3d-advanced 4s ease-in-out infinite;
+}
+
+.animate-flip {
+    animation: flip 2s ease-in-out infinite;
+}
+
+.animate-breathing {
+    animation: breathing 3s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+    animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.animate-morph {
+    animation: morph 4s ease-in-out infinite;
+}
+
+.animate-pop-in {
+    animation: pop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-bounce-in {
+    animation: bounce-in 0.6s ease-out forwards;
+}
+
+.animate-blur-fade {
+    animation: blur-fade-in 0.8s ease-out forwards;
+}
+
+.animate-slide-rotate {
+    animation: slide-rotate-in 0.8s ease-out forwards;
+}
+
+/* ========== CLASES HOVER AVANZADO ========== */
+
+.hover-lift-advanced {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift-advanced:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 212, 212, 0.3);
+}
+
+.hover-glow-advanced {
+    transition: all 0.3s ease-out;
+}
+
+.hover-glow-advanced:hover {
+    filter: drop-shadow(0 0 15px rgba(0, 212, 212, 0.6));
+    transform: scale(1.05);
+}
+
+.hover-rotate {
+    transition: transform 0.3s ease-out;
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* ========== STAGGER DELAYS ========== */
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* ========== RESPONSIVE MOBILE ========== */
+
+@media (max-width: 768px) {
+    .glass-effect-premium {
+        backdrop-filter: blur(20px);
+    }
+    
+    .animate-3d-rotate {
+        animation: rotate-3d-advanced 6s ease-in-out infinite;
+    }
+    
+    .hover-lift-advanced:hover {
+        transform: translateY(-8px) scale(1.01);
+    }
+    
+    /* Reduce stagger en mobile para no saturar */
+    .stagger-4,
+    .stagger-5,
+    .stagger-6 {
+        animation-delay: 0.1s;
+    }
+}
+
+/* ========== UTILIDADES ========== */
+
+.glow-text {
+    text-shadow: 0 0 10px rgba(0, 212, 212, 0.3);
+}
+
+.glow-border {
+    border: 2px solid rgba(0, 212, 212, 0.5);
+    box-shadow: 0 0 15px rgba(0, 212, 212, 0.2);
+}
+
+.will-animate {
+    will-change: transform, opacity;
+}
+
+.gpu-accelerate {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+

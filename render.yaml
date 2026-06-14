@@ -1,0 +1,8 @@
+# Render Blueprint — Sitio estático de León Telecom
+# Tipo "static": gratis y disponible 24/7 (se sirve desde CDN, no se duerme).
+services:
+  - type: web
+    name: leontelecom-web
+    runtime: static
+    buildCommand: "echo 'Sitio estatico: sin paso de build'"
+    staticPublishPath: .

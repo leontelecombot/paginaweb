@@ -1,0 +1,1133 @@
+/* ============================================================
+   LEÓN TELECOM · CAPA PREMIUM
+   Sliders "liquid glass" + animaciones de revelado
+   (cortes con clip-path y aperturas tipo cortina)
+   ------------------------------------------------------------
+   Reutiliza las variables de css/styles.css (--color-secondary,
+   --color-accent, etc). Este archivo NO toca nada del bot.
+   ============================================================ */
+
+/* ============================
+   1. REVELADOS AL HACER SCROLL
+   ============================
+   El estado inicial lo aplica JS (clase .reveal-init) para que,
+   si JS no carga, el contenido siga siendo visible (no-JS safe).
+*/
+
+.reveal-init[data-reveal] {
+    opacity: 0;
+    transition:
+        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        clip-path 1s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.9s ease;
+    transition-delay: var(--reveal-delay, 0s);
+}
+
+/* --- Subida limpia (segura para texto con degradado) ---
+   NO usa clip-path/filter/will-change para no romper
+   -webkit-background-clip:text en los títulos. */
+.reveal-init[data-reveal="rise"] {
+    transform: translateY(46px);
+}
+
+/* --- Apertura: corte que se abre de abajo hacia arriba --- */
+.reveal-init[data-reveal="clip-up"] {
+    clip-path: inset(100% 0 0 0);
+    transform: translateY(40px);
+}
+
+/* --- Corte horizontal: se abre de izquierda a derecha --- */
+.reveal-init[data-reveal="clip-right"] {
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(-40px);
+}
+
+/* --- Apertura desde el centro (telón que abre vertical) --- */
+.reveal-init[data-reveal="open-center"] {
+    clip-path: inset(0 50% 0 50%);
+    transform: scale(0.96);
+}
+
+/* --- Diagonal: corte en bisel --- */
+.reveal-init[data-reveal="clip-diagonal"] {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    transform: translateX(-30px);
+}
+
+/* --- Desvanecido con desenfoque y subida --- */
+.reveal-init[data-reveal="fade-up"] {
+    transform: translateY(48px);
+    filter: blur(8px);
+}
+
+.reveal-init[data-reveal="zoom-in"] {
+    transform: scale(0.82);
+    filter: blur(6px);
+}
+
+/* Estado revelado: todo vuelve a su sitio */
+.reveal-init[data-reveal].is-visible {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: none;
+    filter: none;
+}
+.reveal-init[data-reveal="clip-diagonal"].is-visible {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ============================
+   2. TELÓN DE APERTURA (CURTAIN)
+   ============================
+   Pensado para imágenes / bloques visuales: dos paneles de
+   cristal que se separan revelando el contenido detrás.
+*/
+.curtain {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+.curtain::before,
+.curtain::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 4;
+    background: linear-gradient(135deg, rgba(13, 22, 36, 0.96) 0%, rgba(19, 35, 56, 0.92) 100%);
+    border-inline: 1px solid rgba(143, 252, 255, 0.18);
+    box-shadow: 0 0 40px rgba(55, 217, 217, 0.12);
+    transition: transform 1.1s cubic-bezier(0.76, 0, 0.24, 1);
+    transition-delay: var(--reveal-delay, 0.05s);
+    pointer-events: none;
+}
+.curtain::before { left: 0; }
+.curtain::after  { right: 0; }
+.curtain.is-visible::before { transform: translateX(-101%); }
+.curtain.is-visible::after  { transform: translateX(101%); }
+
+/* Brillo que cruza al abrirse */
+.curtain .curtain-shine {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: linear-gradient(90deg, transparent 0%, rgba(143, 252, 255, 0.35) 50%, transparent 100%);
+    transform: translateX(-120%);
+    pointer-events: none;
+}
+.curtain.is-visible .curtain-shine {
+    animation: curtain-sweep 1.1s ease-out 0.25s 1;
+}
+@keyframes curtain-sweep {
+    to { transform: translateX(120%); }
+}
+
+/* ============================
+   3. SLIDER "LIQUID GLASS"
+   ============================ */
+.glass-slider {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+    border-radius: 28px;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.025) 100%);
+    border: 1px solid rgba(143, 252, 255, 0.16);
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
+    box-shadow:
+        0 30px 80px rgba(4, 18, 35, 0.5),
+        0 0 34px rgba(55, 217, 217, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+/* Borde superior de luz, igual que las plan-card */
+.glass-slider::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    z-index: 6;
+    background: linear-gradient(90deg, transparent, #77f2f2 35%, #8ffcff 65%, transparent);
+    box-shadow: 0 0 18px rgba(55, 217, 217, 0.4);
+}
+
+.glass-slider-viewport {
+    position: relative;
+    width: 100%;
+    min-height: 340px;
+}
+
+.glass-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1rem;
+    padding: 3.4rem 3rem;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    /* estado de salida: cortado a la derecha */
+    clip-path: inset(0 0 0 100%);
+    transform: scale(1.04);
+    transition:
+        opacity 0.7s ease,
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        clip-path 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Slide activo: apertura completa (corte que abre desde la derecha) */
+.glass-slide.active {
+    opacity: 1;
+    visibility: visible;
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+    z-index: 2;
+}
+
+/* Slide que está saliendo hacia la izquierda */
+.glass-slide.leaving {
+    opacity: 0;
+    visibility: visible;
+    clip-path: inset(0 100% 0 0);
+    transform: scale(0.96);
+    z-index: 1;
+}
+
+/* Reflejo de cristal que barre en cada cambio */
+.glass-slide.active .glass-slide-glint {
+    animation: slide-glint 0.95s ease-out 1;
+}
+.glass-slide-glint {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(115deg, transparent 35%, rgba(143, 252, 255, 0.18) 50%, transparent 65%);
+    transform: translateX(-120%);
+    z-index: 3;
+}
+@keyframes slide-glint {
+    to { transform: translateX(120%); }
+}
+
+/* Contenido de cada slide */
+.glass-slide .slide-icon {
+    font-size: 2.6rem;
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 16px rgba(143, 252, 255, 0.4));
+}
+.glass-slide .slide-quote {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #eaf6ff;
+    font-weight: 500;
+    max-width: 760px;
+    letter-spacing: 0.3px;
+}
+.glass-slide .slide-stars {
+    color: #ffd479;
+    letter-spacing: 3px;
+    font-size: 1.05rem;
+    filter: drop-shadow(0 0 8px rgba(255, 200, 100, 0.35));
+}
+.glass-slide .slide-author {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+.glass-slide .slide-author span {
+    display: block;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-top: 2px;
+}
+
+/* Variante con estadística grande (para slides de cobertura) */
+.glass-slide .slide-stat {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, #77f2f2 0%, #8ffcff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+/* ---- Controles (flechas) ---- */
+.glass-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 7;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #eaf6ff;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(55, 217, 217, 0.08) 100%);
+    border: 1px solid rgba(143, 252, 255, 0.22);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 12px 30px rgba(4, 18, 35, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    transition: var(--transition-smooth);
+}
+.glass-slider-arrow:hover {
+    background: linear-gradient(135deg, rgba(143, 252, 255, 0.28) 0%, rgba(55, 217, 217, 0.18) 100%);
+    border-color: rgba(143, 252, 255, 0.4);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 16px 38px rgba(4, 18, 35, 0.5), 0 0 22px rgba(55, 217, 217, 0.25);
+}
+.glass-slider-arrow:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+.glass-slider-arrow.prev { left: 18px; }
+.glass-slider-arrow.next { right: 18px; }
+
+/* ---- Dots + barra de autoplay ---- */
+.glass-slider-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1.2rem 0 1.6rem;
+    position: relative;
+    z-index: 6;
+}
+.glass-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(143, 252, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    transition: var(--transition-smooth);
+    padding: 0;
+}
+.glass-dot:hover { transform: scale(1.25); }
+.glass-dot.active {
+    width: 34px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #77f2f2, #8ffcff);
+    box-shadow: 0 0 14px rgba(55, 217, 217, 0.5);
+}
+.glass-dot:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/* Barra de progreso de autoplay */
+.glass-slider-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    z-index: 6;
+    background: rgba(255, 255, 255, 0.06);
+}
+.glass-slider-progress span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #77f2f2, #8ffcff);
+    box-shadow: 0 0 12px rgba(55, 217, 217, 0.5);
+}
+.glass-slider-progress.run span {
+    animation: autoplay-bar var(--autoplay-ms, 6000ms) linear forwards;
+}
+@keyframes autoplay-bar {
+    from { width: 0; }
+    to   { width: 100%; }
+}
+
+/* ============================
+   4. BARRA DE PROGRESO DE SCROLL
+   ============================ */
+.scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 100%;
+    z-index: 2000;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    background: linear-gradient(90deg, #37d9d9, #8ffcff);
+    box-shadow: 0 0 12px rgba(55, 217, 217, 0.6);
+    will-change: transform;
+}
+
+/* ============================
+   5. BOTONES FLOTANTES (glass)
+   ============================ */
+.fab-stack {
+    position: fixed;
+    right: 22px;
+    bottom: 24px;
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+/* Mientras el usuario hace scroll, se atenúan para no chocar
+   visualmente con el contenido (CTAs, badges) que pasa debajo;
+   al detenerse vuelven a su estado normal. */
+.fab-stack.is-scrolling {
+    opacity: 0.32;
+    transform: scale(0.9) translateX(6px);
+    pointer-events: none;
+}
+/* Al llegar al footer se esconden para no encimarse con los datos
+   de contacto (teléfono, dirección, etc.). */
+.fab-stack.at-footer {
+    opacity: 0;
+    transform: translateY(24px) scale(0.85);
+    pointer-events: none;
+}
+.floatbtn {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1; /* evita que el line-height heredado desfase el ícono */
+    cursor: pointer;
+    border: 1px solid rgba(143, 252, 255, 0.24);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    box-shadow: 0 14px 34px rgba(4, 18, 35, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    transition: var(--transition-smooth);
+    text-decoration: none;
+}
+/* El glyph ocupa su propia caja centrada, sin herencias raras */
+.floatbtn i {
+    line-height: 1;
+    display: block;
+}
+.fab-whatsapp {
+    color: #ffffff;
+    background: linear-gradient(180deg, #2bd366 0%, #1ca84d 100%);
+    border-color: rgba(234, 255, 234, 0.32);
+}
+.fab-whatsapp:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 20px 44px rgba(37, 211, 102, 0.4), 0 0 22px rgba(37, 211, 102, 0.5);
+    color: #ffffff;
+}
+.fab-top {
+    color: #eaf6ff;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(55, 217, 217, 0.12) 100%);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+}
+.fab-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.fab-top:hover {
+    transform: translateY(-4px) scale(1.08);
+    background: linear-gradient(180deg, rgba(143, 252, 255, 0.28), rgba(55, 217, 217, 0.18));
+    box-shadow: 0 18px 40px rgba(4, 18, 35, 0.5), 0 0 22px rgba(55, 217, 217, 0.3);
+}
+/* Latido sutil del botón de WhatsApp para captar la atención */
+.fab-whatsapp::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(37, 211, 102, 0.6);
+    animation: fab-ping 2.4s ease-out infinite;
+}
+@keyframes fab-ping {
+    0%   { transform: scale(1);   opacity: 0.7; }
+    70%  { transform: scale(1.6); opacity: 0; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ============================
+   6. SECCIÓN TESTIMONIOS
+   ============================ */
+.testimonios-section {
+    background: linear-gradient(135deg, #0d1624 0%, #08111d 50%, #0d1624 100%);
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 90px;
+    align-items: flex-start;
+}
+.testimonios-section .container {
+    width: 100%;
+}
+
+/* ============================
+   7. CONTADORES / KPIs
+   ============================ */
+.stats-band {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.4rem;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+}
+.stat-card {
+    text-align: center;
+    padding: 2rem 1.4rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.025) 100%);
+    border: 1px solid rgba(143, 252, 255, 0.16);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-glass-md), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: var(--transition-smooth);
+}
+.stat-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(143, 252, 255, 0.3);
+    box-shadow: var(--shadow-glass-lg), 0 0 20px rgba(55, 217, 217, 0.14);
+}
+.stat-number {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, #77f2f2 0%, #8ffcff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.stat-label {
+    margin-top: 0.6rem;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    letter-spacing: 0.4px;
+}
+
+/* ============================
+   8. RESPONSIVE
+   ============================ */
+@media (max-width: 768px) {
+    .glass-slide { padding: 2.6rem 1.4rem; }
+    .glass-slide .slide-quote { font-size: 1.1rem; }
+    .glass-slide .slide-stat { font-size: 3rem; }
+    .glass-slider-arrow { width: 42px; height: 42px; font-size: 1rem; }
+    .glass-slider-arrow.prev { left: 8px; }
+    .glass-slider-arrow.next { right: 8px; }
+    .glass-slider-viewport { min-height: 400px; }
+    .stat-number { font-size: 2.2rem; }
+
+    /* Botones flotantes más discretos en móvil */
+    .fab-stack { right: 14px; bottom: 16px; gap: 10px; }
+    .floatbtn { width: 46px; height: 46px; font-size: 1.2rem; }
+    .fab-whatsapp::after { display: none; } /* sin anillo pulsante en móvil */
+}
+
+/* ============================
+   9. ACCESIBILIDAD: reduce motion
+   ============================ */
+@media (prefers-reduced-motion: reduce) {
+    .reveal-init[data-reveal] {
+        opacity: 1 !important;
+        clip-path: none !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+    }
+    .curtain::before,
+    .curtain::after { display: none; }
+    .glass-slide {
+        transition: opacity 0.3s ease;
+        clip-path: none;
+        transform: none;
+    }
+    .glass-slide-glint,
+    .curtain-shine,
+    .fab-whatsapp::after,
+    .glass-slider-progress.run span { animation: none !important; }
+    .scroll-progress { transition: none; }
+}
+
+/* ============================================================
+   10. DESIGN BOOST · "a mil"
+   Más profundidad de color, movimiento ambiental y brillo.
+   Paleta: cian (marca) + teal + azul eléctrico + violeta suave.
+   IMPORTANTE: nada de will-change/clip-path sobre textos con
+   degradado (-webkit-background-clip:text) para no romperlos.
+   ============================================================ */
+
+:root {
+    --boost-cyan:   #37d9d9;
+    --boost-accent: #8ffcff;
+    --boost-blue:   #5b8cff;
+    --boost-teal:   #2fe6c8;
+    --boost-violet: #9c7bff;
+}
+
+/* --- Fondo aurora animado + rejilla (capa ambiental) ---
+   Va en una capa fija a z-index -1. Para que se vea, las
+   secciones se vuelven semitransparentes (más abajo). */
+body::after {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(38% 42% at 18% 22%, rgba(55, 217, 217, 0.22) 0%, transparent 60%),
+        radial-gradient(34% 40% at 82% 18%, rgba(91, 140, 255, 0.20) 0%, transparent 60%),
+        radial-gradient(40% 44% at 70% 82%, rgba(47, 230, 200, 0.18) 0%, transparent 62%),
+        radial-gradient(34% 40% at 26% 86%, rgba(156, 123, 255, 0.16) 0%, transparent 60%);
+    filter: blur(34px);
+    opacity: 0.95;
+    animation: aurora-drift 26s ease-in-out infinite alternate;
+}
+@keyframes aurora-drift {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    50%  { transform: translate3d(2.5%, -2%, 0) scale(1.08); }
+    100% { transform: translate3d(-2.5%, 2.5%, 0) scale(1.04); }
+}
+
+/* Rejilla técnica muy sutil sobre la base oscura (no se mueve) */
+body::before {
+    background-image:
+        linear-gradient(rgba(143, 252, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(143, 252, 255, 0.04) 1px, transparent 1px),
+        radial-gradient(circle at 10% 30%, rgba(55, 217, 217, 0.06) 0%, transparent 38%),
+        radial-gradient(circle at 90% 70%, rgba(90, 135, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(143, 252, 255, 0.03) 0%, transparent 50%);
+    background-size: 64px 64px, 64px 64px, 100% 100%, 100% 100%, 100% 100%;
+    filter: none;
+}
+
+/* Secciones translúcidas: dejan ver la aurora detrás */
+.hero-section,
+.servicios-section,
+.quienes-somos-section,
+.testimonios-section,
+.contacto-section {
+    background-color: transparent;
+    background-blend-mode: normal;
+}
+.hero-section {
+    background: linear-gradient(135deg, rgba(7,16,27,0.62) 0%, rgba(13,22,36,0.5) 30%, rgba(19,35,56,0.42) 62%, rgba(13,22,36,0.5) 84%, rgba(7,16,27,0.62) 100%);
+}
+.servicios-section {
+    background: linear-gradient(135deg, rgba(13,22,36,0.66) 0%, rgba(8,17,29,0.58) 50%, rgba(13,22,36,0.66) 100%);
+}
+.quienes-somos-section {
+    background: linear-gradient(135deg, rgba(8,17,29,0.66) 0%, rgba(13,22,36,0.58) 50%, rgba(8,17,29,0.66) 100%);
+}
+.testimonios-section {
+    background: linear-gradient(135deg, rgba(13,22,36,0.66) 0%, rgba(8,17,29,0.58) 50%, rgba(13,22,36,0.66) 100%);
+}
+.contacto-section {
+    background: linear-gradient(135deg, rgba(7,16,27,0.62) 0%, rgba(13,22,36,0.52) 40%, rgba(19,35,56,0.46) 70%, rgba(8,17,29,0.62) 100%);
+}
+
+/* --- HERO a mil: degradado fluido + foco de luz --- */
+.hero-title {
+    background: linear-gradient(110deg, #ffffff 0%, #8ffcff 28%, #37d9d9 50%, #5b8cff 72%, #8ffcff 100%);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow-text 4s ease-in-out infinite, hero-text-flow 8s linear infinite;
+}
+@keyframes hero-text-flow {
+    to { background-position: 220% center; }
+}
+
+/* Halo de luz que respira detrás del contenido del hero */
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    width: min(720px, 90vw);
+    height: min(720px, 90vw);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(55, 217, 217, 0.22) 0%, rgba(91, 140, 255, 0.10) 38%, transparent 68%);
+    pointer-events: none;
+    z-index: 0;
+    animation: breathing 7s ease-in-out infinite;
+}
+
+/* Halo turquesa pulsante detrás del logo del hero */
+.hero-logo {
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 0 26px rgba(55, 217, 217, 0.45));
+    animation: breathing 6s ease-in-out infinite;
+}
+
+/* --- Títulos de sección: degradado fluido + subrayado animado --- */
+.section-title {
+    background: linear-gradient(110deg, #eaf6ff 0%, #8ffcff 35%, #37d9d9 55%, #5b8cff 80%, #8ffcff 100%);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hero-text-flow 9s linear infinite;
+    position: relative;
+}
+.section-title::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 4px;
+    margin: 18px auto 0;
+    border-radius: 4px;
+    background: linear-gradient(90deg, transparent, var(--boost-cyan), var(--boost-accent), transparent);
+    box-shadow: 0 0 16px rgba(55, 217, 217, 0.5);
+    transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+}
+/* el subrayado crece cuando el título entra (o de inmediato sin JS) */
+.section-title.is-visible::after,
+.section-title:not(.reveal-init)::after { width: 120px; }
+
+/* --- Contacto: mantener su degradado pero también fluido --- */
+.contacto-section .section-title {
+    background: linear-gradient(110deg, #ffffff 0%, #8ffcff 40%, #37d9d9 60%, #5b8cff 85%, #8ffcff 100%);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Plan cards: sheen de borde + aura en featured --- */
+.plan-card::after {
+    background: radial-gradient(circle, rgba(91, 140, 255, 0.10) 0%, transparent 70%);
+}
+.plan-card.featured {
+    border-color: rgba(143, 252, 255, 0.4);
+}
+.plan-card.featured::before {
+    height: 5px;
+    background: linear-gradient(90deg, #5b8cff, #37d9d9 50%, #8ffcff);
+    box-shadow: 0 0 26px rgba(55, 217, 217, 0.6);
+}
+/* Aura suave que respira en la tarjeta destacada */
+.plan-card.featured {
+    animation: featured-aura 4.5s ease-in-out infinite;
+}
+@keyframes featured-aura {
+    0%, 100% { box-shadow: 0 25px 70px rgba(4, 18, 35, 0.52), 0 0 26px rgba(55, 217, 217, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.18); }
+    50%      { box-shadow: 0 28px 80px rgba(4, 18, 35, 0.58), 0 0 40px rgba(91, 140, 255, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.22); }
+}
+
+/* --- Badge "Popular/Recomendado/Ultra": pestaña sobre el borde superior ---
+   La píldora se monta a caballo del borde de arriba (mitad afuera).
+   Así el contenido de la tarjeta NO se empuja: los títulos
+   ("15/20/30 Mbps") quedan alineados solos en toda la fila.
+   Para que la pestaña pueda salir, la destacada usa overflow:visible
+   y se desactiva el shimmer que se desbordaría. */
+.plan-card.featured {
+    overflow: hidden; /* recorta la cinta en la esquina */
+    /* preserve-3d + will-change (de styles.css) rompen el recorte al
+       hacer hover y la cinta se desborda; los forzamos a plano. */
+    transform-style: flat;
+    will-change: auto;
+}
+.plan-card.featured::after {
+    display: none; /* sin shimmer derramado; ya tiene su aura propia */
+}
+/* --- Cinta diagonal en esquina (método robusto: caja propia) ---
+   La cinta vive dentro de .ribbon-box, una cajita en la esquina con
+   SU PROPIO overflow:hidden. Así el recorte NO depende del overflow
+   de la tarjeta (que falla con preserve-3d/hover en Chromium). */
+.ribbon-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 116px;
+    height: 116px;
+    overflow: hidden;
+    border-top-right-radius: 24px; /* sigue la esquina redondeada de la tarjeta */
+    pointer-events: none;
+    z-index: 6;
+}
+.ribbon-box .badge {
+    position: absolute;
+    top: 22px;
+    right: -32px;
+    width: 150px;
+    padding: 6px 0;
+    transform: rotate(45deg);
+    transform-origin: center;
+    text-align: center;
+    border-radius: 0;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: #06111d;
+    background: linear-gradient(90deg, #8ffcff 0%, #37d9d9 100%);
+    border: none;
+    box-shadow: 0 4px 14px rgba(4, 18, 35, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+/* En móvil la cinta se hace un poco más compacta. */
+@media (max-width: 768px) {
+    .ribbon-box {
+        width: 104px;
+        height: 104px;
+    }
+    .ribbon-box .badge {
+        top: 19px;
+        right: -34px;
+        width: 140px;
+        font-size: 0.56rem;
+        letter-spacing: 0.6px;
+    }
+}
+
+/* --- PULIDO de tarjetas de plan ---
+   1) La tarjeta es columna flex: el botón "Contratar" queda SIEMPRE
+      anclado abajo y parejo en las 3 tarjetas (sin huecos raros).
+   2) El icono pasa de rebotar (distrae) a un chip circular de vidrio
+      con un movimiento sutil al pasar el mouse: más profesional. */
+.plan-card {
+    display: flex;
+    flex-direction: column;
+}
+.plan-card .btn-plan {
+    margin-top: auto;
+}
+.plan-header i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    margin: 0 auto 0.6rem;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    background: linear-gradient(135deg, rgba(143, 252, 255, 0.16) 0%, rgba(55, 217, 217, 0.06) 100%);
+    border: 1px solid rgba(143, 252, 255, 0.24);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 8px 20px rgba(4, 18, 35, 0.3);
+    animation: none; /* sin rebote constante */
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+.plan-card:hover .plan-header i {
+    transform: translateY(-5px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24), 0 14px 30px rgba(4, 18, 35, 0.42), 0 0 22px rgba(55, 217, 217, 0.32);
+}
+
+/* Precio con degradado más vivo */
+.plan-price {
+    background: linear-gradient(120deg, #8ffcff 0%, #37d9d9 45%, #5b8cff 100%);
+    background-size: 180% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Tabs de servicio: la activa con degradado de marca --- */
+.tab-btn.active {
+    background: linear-gradient(135deg, rgba(91, 140, 255, 0.28) 0%, rgba(55, 217, 217, 0.20) 100%);
+    border-color: rgba(143, 252, 255, 0.45);
+    box-shadow: 0 15px 32px rgba(4, 18, 35, 0.4), 0 0 22px rgba(55, 217, 217, 0.22);
+}
+
+/* --- Botones primarios: degradado con un toque de azul --- */
+.btn-primary {
+    background: linear-gradient(120deg, #8ffcff 0%, #37d9d9 55%, #5bd9ff 100%);
+}
+
+/* --- Navbar: línea inferior con luz de marca --- */
+.navbar {
+    border-bottom: 1px solid rgba(143, 252, 255, 0.16);
+}
+
+/* --- Slider: brillo de marco un poco más rico --- */
+.glass-slider {
+    border-color: rgba(143, 252, 255, 0.22);
+    box-shadow:
+        0 30px 80px rgba(4, 18, 35, 0.55),
+        0 0 44px rgba(91, 140, 255, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+.glass-slider::before {
+    background: linear-gradient(90deg, transparent, #5b8cff 30%, #37d9d9 50%, #8ffcff 70%, transparent);
+}
+
+/* --- Iconos de info/valores con un acento azul en hover --- */
+.value-card:hover i,
+.info-card:hover i {
+    color: var(--boost-accent);
+    filter: drop-shadow(0 0 16px rgba(91, 140, 255, 0.5));
+}
+
+/* --- Redes sociales: fila de círculos limpia y centrada ---
+   Sin caja "dock". Flexbox centrado a prueba de balas (!important
+   para ganarle a cualquier regla previa de styles.css). Cada ícono
+   ya trae su color de marca, no solo en hover, para que se vean
+   intencionales y no sueltos/apagados. */
+.social-media {
+    width: 100%;
+    text-align: center;
+}
+.social-links {
+    display: flex !important;
+    width: 100%;
+    margin: 1.5rem auto 0;
+    justify-content: center !important;
+    align-items: center;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+.social-link {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    line-height: 1; /* centra el glyph: sin el line-height heredado del body */
+    color: #8ffcff;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border: 1px solid rgba(143, 252, 255, 0.2);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: 0 12px 28px rgba(4, 18, 35, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+.social-link i {
+    line-height: 1;
+    display: block;
+}
+.social-link:hover {
+    transform: translateY(-8px) scale(1.1);
+    color: #ffffff;
+    box-shadow: 0 20px 44px rgba(4, 18, 35, 0.45), 0 0 22px rgba(143, 252, 255, 0.35);
+}
+/* El color de marca aparece solo al pasar el mouse.
+   Degradado VERTICAL (uniforme) para que no se forme un punto
+   brillante en la esquina que parezca un círculo desplazado. */
+.social-link.facebook:hover {
+    background: linear-gradient(180deg, #2d88ff, #0a52c4);
+    border-color: rgba(45, 136, 255, 0.6);
+}
+.social-link.whatsapp:hover {
+    background: linear-gradient(180deg, #2bd366, #1ca84d);
+    border-color: rgba(37, 211, 102, 0.6);
+}
+.social-link.instagram:hover {
+    background: linear-gradient(180deg, #f58529, #dd2a7b 55%, #8134af);
+    border-color: rgba(221, 42, 123, 0.6);
+}
+
+/* ============================================================
+   11. PRODUCTOS & ACCESORIOS (vitrina)
+   Tarjetas de vidrio con imagen, filtro por categoría y
+   botón de cotización directa por WhatsApp.
+   ============================================================ */
+.productos-section {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 90px;
+    align-items: flex-start;
+    background: linear-gradient(135deg, rgba(8, 17, 29, 0.66) 0%, rgba(13, 22, 36, 0.58) 50%, rgba(8, 17, 29, 0.66) 100%);
+}
+.productos-section .container { width: 100%; }
+
+/* --- Filtros por categoría (chips) --- */
+.product-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+    margin: 2rem auto 2.6rem;
+}
+.prod-filter {
+    padding: 9px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: #c8d7e8;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(143, 252, 255, 0.16);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    transition: var(--transition-smooth);
+}
+.prod-filter:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    border-color: rgba(143, 252, 255, 0.3);
+}
+.prod-filter.active {
+    color: #06111d;
+    background: linear-gradient(135deg, #8ffcff 0%, #37d9d9 60%, #5bd9ff 100%);
+    border-color: rgba(143, 252, 255, 0.5);
+    box-shadow: 0 10px 24px rgba(4, 18, 35, 0.4), 0 0 16px rgba(55, 217, 217, 0.25);
+}
+
+/* --- Grid de productos --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.8rem;
+}
+
+/* --- Tarjeta de producto --- */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border: 1px solid rgba(143, 252, 255, 0.16);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    box-shadow: 0 18px 46px rgba(4, 18, 35, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.product-card.is-hidden { display: none; }
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(143, 252, 255, 0.34);
+    box-shadow: 0 28px 64px rgba(4, 18, 35, 0.5), 0 0 26px rgba(55, 217, 217, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+/* Imagen: fondo claro para que la foto del producto resalte */
+.product-img {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: radial-gradient(circle at 50% 35%, #ffffff 0%, #eef4f8 70%, #dbe6ee 100%);
+    overflow: hidden;
+}
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1.1rem;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product-card:hover .product-img img { transform: scale(1.07); }
+
+/* Chip de categoría sobre la imagen */
+.product-cat {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 11px;
+    border-radius: 50px;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #06111d;
+    background: linear-gradient(135deg, #8ffcff, #37d9d9);
+    box-shadow: 0 6px 14px rgba(4, 18, 35, 0.3);
+}
+
+/* Cuerpo de la tarjeta */
+.product-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 1.1rem 1.2rem 1.3rem;
+    flex: 1;
+}
+.product-name {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #eaf6ff;
+    margin: 0;
+}
+.product-foot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: auto;
+}
+.product-price {
+    font-size: 1.7rem;
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+    background: linear-gradient(120deg, #8ffcff 0%, #37d9d9 50%, #5b8cff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Botón de ancho completo, ícono + texto perfectamente centrados.
+   Degradado VERTICAL (uniforme de lado a lado) para que no se forme
+   un punto brillante junto al ícono que parezca un "círculo". */
+.btn-product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 50px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #ffffff;
+    background: linear-gradient(180deg, #2bd366 0%, #1ca84d 100%);
+    border: 1px solid rgba(234, 255, 234, 0.28);
+    box-shadow: 0 10px 22px rgba(18, 140, 70, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    transition: var(--transition-smooth);
+}
+.btn-product i {
+    font-size: 1.05rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+}
+.btn-product:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(180deg, #30dd6e 0%, #1faf54 100%);
+    box-shadow: 0 16px 32px rgba(37, 211, 102, 0.4), 0 0 18px rgba(37, 211, 102, 0.45);
+}
+
+@media (max-width: 768px) {
+    .products-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
+    .product-name { font-size: 0.9rem; }
+    .product-price { font-size: 1.4rem; }
+    .btn-product { padding: 9px 10px; font-size: 0.82rem; gap: 6px; }
+    .btn-product i { font-size: 1rem; }
+    .product-body { padding: 0.9rem 0.9rem 1rem; gap: 0.7rem; }
+    .product-foot { gap: 0.7rem; }
+}
+
+/* --- Horarios: que quepan los 7 días (Domingo se cortaba) --- */
+.schedule-card.open .schedule-list {
+    max-height: 700px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::after,
+    .hero-section::after,
+    .hero-logo,
+    .hero-title,
+    .section-title,
+    .plan-card.featured { animation: none !important; }
+}
