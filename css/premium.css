@@ -1123,6 +1123,136 @@ body::before {
     max-height: 700px;
 }
 
+/* ============================================================
+   12. COBERTURA / INSTALACIÓN + CÁMARAS DE SEGURIDAD
+   ============================================================ */
+.cobertura-section,
+.camaras-section {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 90px;
+    align-items: flex-start;
+}
+.cobertura-section {
+    background: linear-gradient(135deg, rgba(8,17,29,0.66) 0%, rgba(13,22,36,0.58) 50%, rgba(8,17,29,0.66) 100%);
+}
+.camaras-section {
+    background: linear-gradient(135deg, rgba(13,22,36,0.66) 0%, rgba(8,17,29,0.58) 50%, rgba(13,22,36,0.66) 100%);
+}
+.cobertura-section .container,
+.camaras-section .container { width: 100%; }
+
+/* --- Zonas de cobertura / instalación --- */
+.zonas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.6rem;
+    margin-top: 2.5rem;
+}
+.zona-card {
+    text-align: center;
+    padding: 2.2rem 1.6rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%);
+    border: 1px solid rgba(143,252,255,0.16);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    box-shadow: 0 18px 46px rgba(4,18,35,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.zona-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(143,252,255,0.32);
+    box-shadow: 0 26px 60px rgba(4,18,35,0.5), 0 0 24px rgba(55,217,217,0.16);
+}
+.zona-icon {
+    width: 58px; height: 58px;
+    margin: 0 auto 1rem;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    font-size: 1.4rem; color: #8ffcff; line-height: 1;
+    background: linear-gradient(135deg, rgba(143,252,255,0.16), rgba(55,217,217,0.06));
+    border: 1px solid rgba(143,252,255,0.24);
+}
+.zona-card h3 {
+    font-size: 1.5rem; font-weight: 800; margin: 0 0 0.4rem;
+    color: #eaf6ff; letter-spacing: 0.5px;
+}
+.zona-tipo {
+    color: #8ffcff; font-size: 0.85rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem;
+}
+.zona-costo { color: #d6e4f5; font-size: 1.05rem; margin-bottom: 0.6rem; }
+.zona-costo strong {
+    background: linear-gradient(120deg, #8ffcff, #37d9d9);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    font-size: 1.15rem;
+}
+.zona-promo { color: #ffd479; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.6rem; }
+.zona-promo span { color: #b2c0d3; font-weight: 500; font-size: 0.82rem; }
+.zona-nota { color: #94a6bb; font-size: 0.85rem; line-height: 1.5; margin: 0; }
+
+/* --- Tarjetas de cámaras --- */
+.camaras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+.camera-card {
+    display: flex; flex-direction: column;
+    border-radius: 22px; overflow: hidden;
+    background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%);
+    border: 1px solid rgba(143,252,255,0.16);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    box-shadow: 0 20px 50px rgba(4,18,35,0.42), inset 0 1px 0 rgba(255,255,255,0.1);
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.camera-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(143,252,255,0.34);
+    box-shadow: 0 30px 66px rgba(4,18,35,0.52), 0 0 26px rgba(55,217,217,0.16);
+}
+.camera-img {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #0a1422;
+}
+.camera-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.camera-card:hover .camera-img img { transform: scale(1.06); }
+.camera-tag {
+    position: absolute; top: 12px; left: 12px;
+    padding: 5px 13px; border-radius: 50px;
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase;
+    color: #06111d; background: linear-gradient(135deg, #8ffcff, #37d9d9);
+    box-shadow: 0 6px 16px rgba(4,18,35,0.4);
+}
+.camera-body { display: flex; flex-direction: column; flex: 1; padding: 1.5rem 1.6rem 1.7rem; }
+.camera-body h3 { font-size: 1.5rem; font-weight: 800; margin: 0 0 0.3rem; color: #eaf6ff; }
+.camera-sub { color: #94a6bb; font-size: 0.95rem; margin-bottom: 1.1rem; }
+.camera-features { list-style: none; margin: 0 0 1rem; padding: 0; }
+.camera-features li {
+    display: flex; align-items: flex-start; gap: 0.6rem;
+    color: #d6e4f5; font-size: 0.93rem; line-height: 1.45;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(143,252,255,0.08);
+}
+.camera-features li:last-child { border-bottom: none; }
+.camera-features i { color: #37d9d9; font-size: 0.9rem; margin-top: 0.25rem; flex-shrink: 0; }
+.camera-features strong { color: #8ffcff; }
+.camera-note { color: #b2c0d3; font-size: 0.9rem; margin: 0.2rem 0 1.2rem; line-height: 1.5; }
+.camera-card .btn-product { margin-top: auto; }
+
+@media (max-width: 768px) {
+    .camaras-grid { grid-template-columns: 1fr; }
+    .camera-body h3, .zona-card h3 { font-size: 1.3rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
     body::after,
     .hero-section::after,
