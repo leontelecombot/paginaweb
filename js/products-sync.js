@@ -92,7 +92,36 @@
     bindFilters();
   }
 
+  // Banner de promoción (editable desde el panel) — barra fija arriba.
+  var PROMO = 'https://leontelecom-server.onrender.com/api/promo';
+  function showPromo(d) {
+    if (!d || !d.active || !d.text || document.getElementById('lt-promo-bar')) return;
+    var bar = document.createElement('div');
+    bar.id = 'lt-promo-bar';
+    bar.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:3000;background:linear-gradient(120deg,#2c0a6b,#5e23c4);color:#fff;text-align:center;padding:9px 40px;font-size:.92em;font-weight:600;line-height:1.3;box-shadow:0 3px 16px rgba(44,10,107,.25)';
+    bar.innerHTML = (d.link ? '<a href="' + esc(d.link) + '" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline">' + esc(d.text) + '</a>' : esc(d.text)) +
+      '<span id="lt-promo-x" style="position:absolute;right:13px;top:50%;transform:translateY(-50%);cursor:pointer;opacity:.85;font-size:1.15em" title="Cerrar">✕</span>';
+    document.body.appendChild(bar);
+    var h = bar.offsetHeight;
+    var nav = document.querySelector('.navbar');
+    var bodyPad = parseFloat(getComputedStyle(document.body).paddingTop) || 0;
+    document.body.style.paddingTop = (bodyPad + h) + 'px';
+    var navTop = 0;
+    if (nav) { navTop = parseFloat(getComputedStyle(nav).top) || 0; nav.style.top = (navTop + h) + 'px'; }
+    document.getElementById('lt-promo-x').onclick = function () {
+      bar.remove();
+      document.body.style.paddingTop = bodyPad ? bodyPad + 'px' : '';
+      if (nav) nav.style.top = navTop ? navTop + 'px' : '';
+    };
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    // Banner de promoción (independiente de los productos)
+    fetch(PROMO, { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { if (d) showPromo(d); })
+      .catch(function () {});
+    // Productos dinámicos
     if (!document.querySelector('.products-grid')) return;
     fetch(API, { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })

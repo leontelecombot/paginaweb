@@ -59,6 +59,7 @@
                 <li><a href="#quienes-somos" class="nav-link" data-section="quienes-somos">Quiénes Somos</a></li>
                 <li><a href="#testimonios" class="nav-link" data-section="testimonios">Opiniones</a></li>
                 <li><a href="#productos" class="nav-link" data-section="productos">Productos</a></li>
+                <li><a href="#ayuda" class="nav-link" data-section="ayuda">Ayuda</a></li>
                 <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
             </ul>
         </div>
@@ -815,6 +816,39 @@
         </div>
     </section>
 
+    <!-- Ayuda: Test de velocidad + Preguntas frecuentes -->
+    <section id="ayuda" class="section">
+        <style>
+            .faq-item{background:#fff;border:1px solid #ece9f6;border-radius:12px;margin-bottom:10px;box-shadow:0 4px 16px rgba(44,10,107,.05);overflow:hidden}
+            .faq-item summary{cursor:pointer;padding:15px 18px;font-weight:600;color:#2c0a6b;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.98em}
+            .faq-item summary::-webkit-details-marker{display:none}
+            .faq-item summary::after{content:'+';font-size:1.3em;color:#7c3aed;font-weight:700;transition:.2s}
+            .faq-item[open] summary::after{transform:rotate(45deg)}
+            .faq-item p{padding:0 18px 16px;color:#5a5870;line-height:1.55;margin:0;font-size:.95em}
+        </style>
+        <div class="container">
+            <h2 class="section-title" data-reveal="rise">Ayuda</h2>
+            <p class="section-subtitle" data-reveal="rise">Prueba tu velocidad y resuelve tus dudas al instante.</p>
+
+            <h3 style="text-align:center;color:#4a1aa0;margin:10px 0 14px;font-size:1.15em" data-reveal="rise">⚡ Prueba tu velocidad de internet</h3>
+            <div data-reveal="rise" style="max-width:760px;margin:0 auto 36px;border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(44,10,107,.15);background:#fff">
+                <div style="height:480px;width:100%">
+                    <iframe title="Prueba de velocidad" style="border:none;width:100%;height:100%" src="https://openspeedtest.com/Get-widget.php" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <h3 style="text-align:center;color:#4a1aa0;margin:10px 0 14px;font-size:1.15em" data-reveal="rise">❓ Preguntas frecuentes</h3>
+            <div style="max-width:760px;margin:0 auto" data-reveal="rise">
+                <details class="faq-item"><summary>¿Cómo y dónde puedo pagar mi servicio?</summary><p>Puedes pagar en nuestra oficina (efectivo o tarjeta), por transferencia/depósito o en tiendas. Escríbenos por WhatsApp y con gusto te damos los datos de pago.</p></details>
+                <details class="faq-item"><summary>¿Qué pasa si no tengo internet?</summary><p>Primero reinicia tu módem ~2 minutos. Si sigue igual, escríbenos por WhatsApp con tu nombre y dirección y un técnico lo revisa lo antes posible.</p></details>
+                <details class="faq-item"><summary>¿En qué zonas tienen cobertura?</summary><p>Damos servicio en Huitzo, Suchilquitongo y Telixtlahuaca (centro y agencias). Mándanos tu ubicación por WhatsApp y te confirmamos cobertura y plan disponible.</p></details>
+                <details class="faq-item"><summary>¿Cuál es el horario de atención?</summary><p>Lun a Vie 10:00–15:00 y 16:00–20:00 · Sáb 10:00–15:00 y 16:00–18:00 · Dom 10:00–14:00. El asistente de WhatsApp responde 24/7.</p></details>
+                <details class="faq-item"><summary>¿Cómo contrato el servicio?</summary><p>Muy fácil: escríbenos por WhatsApp, dinos tu zona y el plan que te interesa, y coordinamos tu instalación.</p></details>
+                <details class="faq-item"><summary>¿Puedo cambiar de plan o de paquete?</summary><p>Sí, puedes mejorar o cambiar tu plan cuando quieras. Pregúntanos por WhatsApp y te decimos las opciones para tu zona.</p></details>
+            </div>
+        </div>
+    </section>
+
     <!-- Contacto Section -->
     <section id="contacto" class="section contacto-section">
         <div class="container">
@@ -968,7 +1002,7 @@
 
     <script src="js/script.js?v=23"></script>
     <script src="js/premium.js?v=23"></script>
-    <script src="js/products-sync.js?v=1"></script>
+    <script src="js/products-sync.js?v=2"></script>
     <!-- Schedule modal (móvil) -->
     <div id="scheduleModal" class="modal" aria-hidden="true">
         <div class="modal-backdrop" id="scheduleModalBackdrop"></div>
