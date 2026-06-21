@@ -2,6 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN96D3S5YS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PN96D3S5YS');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="León Telecom — Internet de alta velocidad (fibra óptica e inalámbrico) en Huitzo, Suchilquitongo y Telixtlahuaca, Oaxaca. Soporte 24/7 y accesorios.">
     <meta name="keywords" content="internet, fibra óptica, inalámbrico, telecom, planes, servicios, Huitzo, Suchilquitongo, Telixtlahuaca, Oaxaca">
@@ -819,12 +827,14 @@
     <!-- Ayuda: Test de velocidad + Preguntas frecuentes -->
     <section id="ayuda" class="section">
         <style>
-            .faq-item{background:#fff;border:1px solid #ece9f6;border-radius:12px;margin-bottom:10px;box-shadow:0 4px 16px rgba(44,10,107,.05);overflow:hidden}
-            .faq-item summary{cursor:pointer;padding:15px 18px;font-weight:600;color:#2c0a6b;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.98em}
-            .faq-item summary::-webkit-details-marker{display:none}
-            .faq-item summary::after{content:'+';font-size:1.3em;color:#7c3aed;font-weight:700;transition:.2s}
-            .faq-item[open] summary::after{transform:rotate(45deg)}
-            .faq-item p{padding:0 18px 16px;color:#5a5870;line-height:1.55;margin:0;font-size:.95em}
+            #ayuda .faq-item{background:rgba(255,255,255,.045);border:1px solid rgba(124,58,237,.22);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:.25s;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+            #ayuda .faq-item:hover{border-color:rgba(124,58,237,.45)}
+            #ayuda .faq-item[open]{background:rgba(124,58,237,.12);border-color:rgba(124,58,237,.55);box-shadow:0 10px 34px rgba(124,58,237,.2)}
+            #ayuda .faq-item summary{cursor:pointer;padding:16px 20px;font-weight:600;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:1em}
+            #ayuda .faq-item summary::-webkit-details-marker{display:none}
+            #ayuda .faq-item summary::after{content:'+';font-size:1.5em;color:#a78bfa;font-weight:700;transition:.25s;line-height:1}
+            #ayuda .faq-item[open] summary::after{transform:rotate(135deg)}
+            #ayuda .faq-item p{padding:0 20px 18px;color:rgba(255,255,255,.82);line-height:1.6;margin:0;font-size:.95em}
         </style>
         <div class="container">
             <h2 class="section-title" data-reveal="rise">Ayuda</h2>
