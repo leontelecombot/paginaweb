@@ -1314,3 +1314,14 @@ body::before {
     font-weight: 300;
     line-height: 1.6;
 }
+
+/* === Navbar: que "Internet para Hogares" (etiqueta larga) quepa en una sola
+   fila sin partir el logo ni los menús. Solo en escritorio (en móvil es
+   hamburguesa y no aplica). === */
+@media (min-width: 769px) {
+    .nav-brand { flex-shrink: 0; }
+    .brand-text { white-space: nowrap; }
+    .nav-menu { gap: 1.35rem; flex-wrap: nowrap; }
+    .nav-menu li { white-space: nowrap; }
+    .nav-link { font-size: 0.9rem; white-space: nowrap; }
+}
