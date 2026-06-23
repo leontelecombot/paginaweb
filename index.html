@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/premium.css?v=25">
+    <link rel="stylesheet" href="css/premium.css?v=26">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png?v=1">
@@ -63,7 +63,7 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link" data-section="home">Inicio</a></li>
                 <li><a href="#servicios" class="nav-link" data-section="servicios">Servicios</a></li>
-                <li><a href="#camaras" class="nav-link" data-section="camaras">Cámaras</a></li>
+                <li><a href="#camaras" class="nav-link" data-section="camaras">Videovigilancia</a></li>
                 <li><a href="#quienes-somos" class="nav-link" data-section="quienes-somos">Quiénes Somos</a></li>
                 <li><a href="#testimonios" class="nav-link" data-section="testimonios">Opiniones</a></li>
                 <li><a href="#productos" class="nav-link" data-section="productos">Productos</a></li>
@@ -95,19 +95,21 @@
         <div class="container">
             <h2 class="section-title" data-reveal="rise">Nuestros Servicios</h2>
             <p class="section-subtitle" data-reveal="fade-up" data-reveal-delay="0.15s">Elige el plan perfecto para tus necesidades</p>
-            
+
+            <h3 class="svc-group-title" data-reveal="rise">🏠 Internet para Hogares</h3>
+
             <!-- Tabs para tipos de servicio -->
             <div class="service-tabs">
-                <button class="tab-btn active" data-tab="inalambrico">
-                    <i class="fas fa-wifi"></i> Inalámbrico
-                </button>
-                <button class="tab-btn" data-tab="fibra">
+                <button class="tab-btn active" data-tab="fibra">
                     <i class="fas fa-bolt"></i> Fibra Óptica
+                </button>
+                <button class="tab-btn" data-tab="inalambrico">
+                    <i class="fas fa-wifi"></i> Inalámbrico
                 </button>
             </div>
 
             <!-- Planes Inalámbricos -->
-            <div class="tab-content active" id="inalambrico">
+            <div class="tab-content" id="inalambrico">
                 <div class="planes-grid">
                     <div class="plan-card">
                         <div class="plan-header">
@@ -164,7 +166,7 @@
             </div>
 
             <!-- Planes Fibra Óptica -->
-            <div class="tab-content" id="fibra">
+            <div class="tab-content active" id="fibra">
                 <div class="planes-grid">
                     <div class="plan-card">
                         <div class="plan-header">
@@ -254,6 +256,14 @@
                     </div>
                 </div>
             </div>
+
+            <h3 class="svc-group-title" data-reveal="rise">🏢 Internet para Negocios</h3>
+            <div class="negocios-soon" data-reveal="rise">
+                <span class="badge-soon">Próximamente</span>
+                <h4>Soluciones a la medida de tu empresa</h4>
+                <p>Internet dedicado, mayor velocidad y soporte prioritario para negocios. Estamos preparando estos planes para ti.</p>
+                <a href="https://wa.me/529511697346?text=Hola%20%F0%9F%91%8B%2C%20me%20interesa%20Internet%20para%20Negocios%20de%20Le%C3%B3n%20Telecom.%20%C2%BFMe%20dan%20informes%3F" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Quiero informes para mi negocio</a>
+            </div>
         </div>
     </section>
 
@@ -289,10 +299,10 @@
         </div>
     </section>
 
-    <!-- Cámaras de Seguridad -->
+    <!-- Videovigilancia -->
     <section id="camaras" class="section camaras-section">
         <div class="container">
-            <h2 class="section-title" data-reveal="rise">Cámaras de Seguridad</h2>
+            <h2 class="section-title" data-reveal="rise">Videovigilancia</h2>
             <p class="section-subtitle" data-reveal="rise">Vigila tu hogar o negocio con instalación profesional</p>
             <div class="camaras-grid">
                 <article class="camera-card" data-reveal="rise">

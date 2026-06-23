@@ -1267,3 +1267,50 @@ body::before {
     .section-title,
     .plan-card.featured { animation: none !important; }
 }
+
+/* === Servicios: subgrupos Hogares / Negocios === */
+.svc-group-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin: 2.5rem auto 1.6rem;
+    background: linear-gradient(135deg, #eaf6ff 0%, #37d9d9 50%, #8ffcff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.negocios-soon {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2.4rem 2rem;
+    border: 1px solid rgba(142, 221, 255, 0.18);
+    border-radius: 20px;
+    background: linear-gradient(160deg, rgba(13, 22, 36, 0.6), rgba(8, 17, 29, 0.6));
+    box-shadow: 0 14px 40px rgba(4, 18, 35, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.negocios-soon .badge-soon {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #08111d;
+    background: linear-gradient(135deg, #37d9d9, #8ffcff);
+    padding: 0.35rem 0.95rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+}
+.negocios-soon h4 {
+    font-size: 1.5rem;
+    color: #eaf6ff;
+    margin: 0.2rem 0 0.7rem;
+    font-weight: 700;
+}
+.negocios-soon p {
+    color: #8f9db2;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
