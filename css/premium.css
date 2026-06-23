@@ -1321,7 +1321,13 @@ body::before {
 @media (min-width: 769px) {
     .nav-brand { flex-shrink: 0; }
     .brand-text { white-space: nowrap; }
-    .nav-menu { gap: 1.35rem; flex-wrap: nowrap; }
+    .nav-menu { gap: 1.05rem; flex-wrap: nowrap; }
     .nav-menu li { white-space: nowrap; }
-    .nav-link { font-size: 0.9rem; white-space: nowrap; }
+    .nav-link { font-size: 0.86rem; white-space: nowrap; }
+}
+/* En pantallas medianas (769–1100px) reduce un poco más para que entren los 8 menús */
+@media (min-width: 769px) and (max-width: 1100px) {
+    .brand-text { font-size: 1.3rem; }
+    .nav-menu { gap: 0.85rem; }
+    .nav-link { font-size: 0.82rem; }
 }
