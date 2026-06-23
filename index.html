@@ -62,7 +62,7 @@
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link" data-section="home">Inicio</a></li>
-                <li><a href="#servicios" class="nav-link" data-section="servicios">Servicios</a></li>
+                <li><a href="#servicios" class="nav-link" data-section="servicios">Internet para Hogares</a></li>
                 <li><a href="#camaras" class="nav-link" data-section="camaras">Videovigilancia</a></li>
                 <li><a href="#quienes-somos" class="nav-link" data-section="quienes-somos">Quiénes Somos</a></li>
                 <li><a href="#testimonios" class="nav-link" data-section="testimonios">Opiniones</a></li>
@@ -258,12 +258,13 @@
             </div>
 
             <h3 class="svc-group-title" data-reveal="rise">🏢 Internet para Negocios</h3>
-            <div class="negocios-soon" data-reveal="rise">
+            <div class="negocios-soon" id="negociosPlaceholder" data-reveal="rise">
                 <span class="badge-soon">Próximamente</span>
                 <h4>Soluciones a la medida de tu empresa</h4>
                 <p>Internet dedicado, mayor velocidad y soporte prioritario para negocios. Estamos preparando estos planes para ti.</p>
                 <a href="https://wa.me/529511697346?text=Hola%20%F0%9F%91%8B%2C%20me%20interesa%20Internet%20para%20Negocios%20de%20Le%C3%B3n%20Telecom.%20%C2%BFMe%20dan%20informes%3F" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Quiero informes para mi negocio</a>
             </div>
+            <div class="planes-grid" id="negociosGrid" style="display:none"></div>
         </div>
     </section>
 
@@ -987,6 +988,7 @@
     <script src="js/script.js?v=23"></script>
     <script src="js/premium.js?v=23"></script>
     <script src="js/products-sync.js?v=2"></script>
+    <script src="js/plans-sync.js?v=1"></script>
     <!-- Schedule modal (móvil) -->
     <div id="scheduleModal" class="modal" aria-hidden="true">
         <div class="modal-backdrop" id="scheduleModalBackdrop"></div>
