@@ -6,3 +6,23 @@ services:
     runtime: static
     buildCommand: "echo 'Sitio estatico: sin paso de build'"
     staticPublishPath: .
+    # Cabeceras de seguridad a nivel CDN (no rompen GA / Facebook / fuentes)
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=15552000; includeSubDomains
+      - path: /*
+        name: Permissions-Policy
+        value: camera=(), microphone=(), payment=()
+      - path: /*
+        name: Cross-Origin-Opener-Policy
+        value: same-origin-allow-popups
