@@ -1,0 +1,72 @@
+/* ==========================================================================
+   REALCE — León Telecom
+   NO cambia el diseño ni las posiciones. Solo:
+   1) Halo blanco degradado detrás de los logos (para que el león resalte).
+   2) Paleta de marca un poco más viva (se suma el VIOLETA, estilo OBEX),
+      conservando las animaciones que ya trae premium.css.
+   Se carga DESPUÉS de premium.css. Para revertir, quita el <link>.
+   ========================================================================== */
+
+/* 1) HALO BLANCO DETRÁS DE LOS LOGOS ----------------------------------- */
+/* Hero: spotlight blanco suave que se desvanece (el león navy resalta). */
+.hero-logo {
+  background: radial-gradient(ellipse 60% 78% at 50% 46%,
+              #ffffff 0%, #eaf4ff 46%, rgba(255,255,255,0) 70%) !important;
+  padding: 16px 30px !important;
+  border-radius: 40px !important;
+}
+/* Navbar: chip blanco redondeado detrás del león (badge premium). */
+.logo {
+  background: linear-gradient(140deg, #ffffff 0%, #e9f3ff 100%) !important;
+  border-radius: 13px !important;
+  padding: 5px 9px !important;
+  box-shadow: 0 6px 16px rgba(4, 18, 35, 0.30), inset 0 1px 0 rgba(255,255,255,0.75) !important;
+}
+.logo:hover {
+  box-shadow: 0 8px 22px rgba(55, 217, 217, 0.35), inset 0 1px 0 rgba(255,255,255,0.8) !important;
+}
+
+/* 2) PALETA MÁS VIVA (mismos lugares, se suma el violeta) --------------- */
+/* Títulos de sección y del hero: mismo degradado fluido + violeta.
+   (Conserva la animación 'hero-text-flow' de premium.css: solo cambio los
+   colores y mantengo background-size para que siga corriendo.) */
+.section-title,
+.contacto-section .section-title,
+.hero-title {
+  background: linear-gradient(110deg,
+              #eaf6ff 0%, #8ffcff 24%, #37d9d9 44%, #5b8cff 66%, #9c7bff 86%, #8ffcff 100%) !important;
+  background-size: 220% auto !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Wordmark del navbar: degradado cyan → azul → violeta */
+.brand-text {
+  background: linear-gradient(135deg, #f7fbff 0%, #77f2f2 40%, #5b8cff 78%, #9c7bff 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Barra superior de las tarjetas de plan → multicolor */
+.plan-card::before {
+  background: linear-gradient(90deg, #37d9d9 0%, #5b8cff 55%, #9c7bff 100%) !important;
+  box-shadow: 0 0 20px rgba(91, 140, 255, 0.35), inset 0 1px 0 rgba(255,255,255,0.35) !important;
+}
+
+/* Subrayado animado del menú → multicolor */
+.nav-link::after {
+  background: linear-gradient(90deg, #37d9d9 0%, #5b8cff 60%, #9c7bff 100%) !important;
+  box-shadow: 0 0 14px rgba(91, 140, 255, 0.55) !important;
+}
+
+/* Aurora de fondo un poco más viva y con más presencia de violeta/azul */
+body::after {
+  background:
+    radial-gradient(45% 50% at 18% 22%, rgba(55, 217, 217, 0.26) 0%, transparent 65%),
+    radial-gradient(42% 48% at 82% 18%, rgba(91, 140, 255, 0.24) 0%, transparent 65%),
+    radial-gradient(48% 52% at 70% 82%, rgba(47, 230, 200, 0.20) 0%, transparent 67%),
+    radial-gradient(42% 48% at 26% 86%, rgba(156, 123, 255, 0.22) 0%, transparent 65%) !important;
+  opacity: 0.95 !important;
+}
