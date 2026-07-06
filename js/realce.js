@@ -22,8 +22,9 @@
     var hero = document.querySelector('.hero-section') || document.querySelector('#home');
     if (hero) {
       var orbs = [
-        { w: 460, c: '#37d9d9', top: '-6%', left: '-6%', op: 0.30 },
-        { w: 380, c: '#7c5cff', bottom: '-10%', right: '-6%', op: 0.22 }
+        { w: 460, c: '#37d9d9', top: '-6%', left: '-6%', op: 0.32 },
+        { w: 360, c: '#4f8ff5', top: '30%', right: '-4%', op: 0.20 },
+        { w: 400, c: '#7c5cff', bottom: '-12%', right: '18%', op: 0.22 }
       ];
       orbs.forEach(function (d) {
         var o = el(null, 'lt-orb');
