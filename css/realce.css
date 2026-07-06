@@ -33,29 +33,42 @@
 .contacto-section .section-title,
 .hero-title {
   background: linear-gradient(110deg,
-              #eaf6ff 0%, #8ffcff 24%, #37d9d9 44%, #5b8cff 66%, #9c7bff 86%, #8ffcff 100%) !important;
+              #eaf6ff 0%, #8ffcff 24%, #37d9d9 44%, #5b8cff 66%, #7c5cff 86%, #8ffcff 100%) !important;
   background-size: 220% auto !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
 .brand-text {
-  background: linear-gradient(135deg, #f7fbff 0%, #77f2f2 40%, #5b8cff 78%, #9c7bff 100%) !important;
+  background: linear-gradient(135deg, #dffbff 0%, #46d8e6 38%, #5b8cff 76%, #7c5cff 100%) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
 .plan-card::before {
-  background: linear-gradient(90deg, #37d9d9 0%, #5b8cff 55%, #9c7bff 100%) !important;
+  background: linear-gradient(90deg, #37d9d9 0%, #5b8cff 55%, #7c5cff 100%) !important;
 }
 .nav-link::after {
-  background: linear-gradient(90deg, #37d9d9 0%, #5b8cff 60%, #9c7bff 100%) !important;
+  background: linear-gradient(90deg, #37d9d9 0%, #5b8cff 60%, #7c5cff 100%) !important;
 }
+
+/* Botones y precios a la MISMA familia cyan → azul (armonía) */
+.btn-primary, .btn-plan {
+  background: linear-gradient(135deg, #6ff0f6 0%, #37d9d9 46%, #5b8cff 100%) !important;
+  color: #06202e !important;
+}
+.plan-price {
+  background: linear-gradient(120deg, #8ff2ff 0%, #37d9d9 46%, #6f97ff 100%) !important;
+  -webkit-background-clip: text !important; background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+/* Enlaces de texto en el mismo cyan de marca */
+a { color: #46d8e6; }
 
 /* ---------- 3) BARRA DE PROGRESO + NAV SCROLLED ----------------------- */
 #lt-progress {
   position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 2000;
-  background: linear-gradient(90deg, #37d9d9, #5b8cff, #9c7bff);
+  background: linear-gradient(90deg, #37d9d9, #5b8cff, #7c5cff);
   box-shadow: 0 0 12px rgba(91,140,255,0.6); pointer-events: none;
 }
 .navbar.lt-scrolled {
