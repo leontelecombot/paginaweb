@@ -66,6 +66,23 @@
 /* Enlaces de texto en el mismo cyan de marca */
 a { color: #46d8e6; }
 
+/* ---------- BOTÓN "TIENDA" EN EL NAV (destacado) --------------------- */
+.nav-tienda {
+  background: linear-gradient(135deg, #37d9d9 0%, #4f8ff5 100%) !important;
+  color: #06202e !important;
+  padding: 9px 18px !important;
+  border-radius: 24px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 18px rgba(55,217,217,0.28) !important;
+  transition: transform .15s ease, box-shadow .15s ease !important;
+}
+.nav-tienda:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 26px rgba(79,143,245,0.40) !important;
+  color: #06202e !important;
+}
+.nav-tienda::after { display: none !important; }  /* sin el subrayado de los demás links */
+
 /* ---------- PÍLDORA DE PROMO (hero) ---------------------------------- */
 .hero-promo {
   display: inline-flex; align-items: center; gap: 9px;
