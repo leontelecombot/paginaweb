@@ -8,22 +8,8 @@
    Reversible: quitar los <link>/<script> de realce.
    ========================================================================== */
 
-/* ---------- 1) LOGO: degradado blanco que se DESVANECE (sin recuadro) - */
-.hero-logo {
-  background: radial-gradient(ellipse 60% 74% at 50% 48%,
-              #ffffff 0%, rgba(255,255,255,0.85) 34%, rgba(255,255,255,0) 68%) !important;
-  padding: 12px 26px !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  filter: none !important;
-}
-.logo {
-  background: radial-gradient(ellipse 62% 80% at 50% 50%,
-              #ffffff 0%, rgba(255,255,255,0.72) 40%, rgba(255,255,255,0) 74%) !important;
-  padding: 4px 12px !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
+/* ---------- 1) LOGO: limpio, sin backing blanco (se veía como mancha) - */
+/* (Sin overrides: el león queda tal cual, con su glow cyan sutil del tema.) */
 
 /* ---------- 2) PALETA MÁS VIVA (se suma el violeta) ------------------- */
 .section-title,
