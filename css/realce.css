@@ -34,10 +34,11 @@
 .hero-title {
   background: linear-gradient(115deg,
               #9af4ff 0%, #37d9d9 24%, #4f8ff5 52%, #7c5cff 78%, #46d8e6 100%) !important;
-  background-size: 220% auto !important;
+  background-size: 100% auto !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+  animation: none !important;   /* estático = sin repintar el texto cada frame */
 }
 .brand-text {
   background: linear-gradient(135deg, #dffbff 0%, #46d8e6 38%, #5b8cff 76%, #7c5cff 100%) !important;
@@ -86,21 +87,21 @@ a { color: #46d8e6; }
     radial-gradient(130% 120% at 62% 104%, rgba(124,92,255,0.16) 0%, transparent 60%),
     linear-gradient(135deg, #07101b 0%, #0b1626 45%, #0b1730 100%) !important;
 }
-/* Orbes del hero (suaves, estáticos) */
-.lt-orb {
-  position: absolute; border-radius: 50%; filter: blur(52px);
-  pointer-events: none; z-index: 0; opacity: 0.42;
-}
-
-/* Aurora de TODA la página: color sutil detrás de las secciones (estática) */
+/* Aurora de TODA la página: color sutil detrás de las secciones (estática,
+   solo degradados = barata; sin blur ni orbes). */
 body::after {
   background:
-    radial-gradient(40% 44% at 12% 16%, rgba(46,216,230,0.16) 0%, transparent 62%),
-    radial-gradient(42% 46% at 88% 22%, rgba(77,124,240,0.15) 0%, transparent 62%),
-    radial-gradient(46% 50% at 78% 82%, rgba(124,92,255,0.15) 0%, transparent 64%),
-    radial-gradient(40% 44% at 20% 88%, rgba(46,216,230,0.12) 0%, transparent 62%) !important;
-  opacity: 0.92 !important;
+    radial-gradient(42% 46% at 12% 16%, rgba(46,216,230,0.15) 0%, transparent 62%),
+    radial-gradient(44% 48% at 88% 24%, rgba(77,124,240,0.14) 0%, transparent 62%),
+    radial-gradient(48% 52% at 74% 86%, rgba(124,92,255,0.14) 0%, transparent 64%) !important;
+  opacity: 0.9 !important;
 }
+
+/* ---------- RENDIMIENTO: aligerar los blur en vivo -------------------- */
+/* El backdrop-filter del nav se recalcula en cada frame al hacer scroll:
+   bajamos el radio (24→12) para que sea mucho más ligero. */
+.navbar { backdrop-filter: blur(12px) !important; -webkit-backdrop-filter: blur(12px) !important; }
+.plan-card { backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; }
 
 /* ---------- 5) RENDIMIENTO: apagar animaciones continuas pesadas ------ */
 /* El brillo rotatorio del hero (200%×200%) y la aurora se dejan ESTÁTICOS. */
