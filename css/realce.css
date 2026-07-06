@@ -66,6 +66,21 @@
 /* Enlaces de texto en el mismo cyan de marca */
 a { color: #46d8e6; }
 
+/* ---------- PÍLDORA DE PROMO (hero) ---------------------------------- */
+.hero-promo {
+  display: inline-flex; align-items: center; gap: 9px;
+  margin: 4px auto 30px; padding: 10px 22px;
+  border: 1px solid rgba(70,216,230,0.35); border-radius: 40px;
+  background: linear-gradient(135deg, rgba(55,217,217,0.15), rgba(124,92,255,0.13));
+  color: #dff8ff; font-weight: 600; font-size: 0.98rem; letter-spacing: 0.3px;
+  box-shadow: 0 6px 20px rgba(4,18,35,0.35), inset 0 1px 0 rgba(255,255,255,0.12);
+}
+.hero-promo strong {
+  background: linear-gradient(90deg, #46d8e6, #7c5cff);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
 /* ---------- 3) BARRA DE PROGRESO + NAV SCROLLED ----------------------- */
 #lt-progress {
   position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 2000;
