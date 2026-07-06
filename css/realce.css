@@ -8,16 +8,24 @@
    Reversible: quitar los <link>/<script> de realce.
    ========================================================================== */
 
-/* ---------- 1) LOGO DEL HERO: imagen ya diseñada sobre blanco, como
-   tarjeta redondeada (limpia y profesional, sin manchas). --------------- */
+/* ---------- 1) LOGO: león BLANCO recoloreado (sin caja, con glow) ------
+   La cara se ve gracias a los recortes transparentes que dejan pasar el
+   fondo oscuro. Solo se le da un glow sutil para presencia premium. ------ */
 .hero-logo {
-  max-height: 170px !important;
-  border-radius: 22px !important;
-  box-shadow: 0 20px 46px rgba(4,18,35,0.5),
-              0 0 0 1px rgba(255,255,255,0.10),
-              0 0 34px rgba(55,217,217,0.14) !important;
+  max-height: 150px !important;
   background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
   padding: 0 !important;
+  filter: drop-shadow(0 10px 26px rgba(0,0,0,0.40))
+          drop-shadow(0 0 30px rgba(70,216,230,0.22)) !important;
+}
+.logo {
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  filter: drop-shadow(0 0 9px rgba(70,216,230,0.30)) !important;
 }
 
 /* ---------- 2) PALETA MÁS VIVA (se suma el violeta) ------------------- */
