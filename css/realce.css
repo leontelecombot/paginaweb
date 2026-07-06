@@ -8,8 +8,17 @@
    Reversible: quitar los <link>/<script> de realce.
    ========================================================================== */
 
-/* ---------- 1) LOGO: limpio, sin backing blanco (se veía como mancha) - */
-/* (Sin overrides: el león queda tal cual, con su glow cyan sutil del tema.) */
+/* ---------- 1) LOGO DEL HERO: imagen ya diseñada sobre blanco, como
+   tarjeta redondeada (limpia y profesional, sin manchas). --------------- */
+.hero-logo {
+  max-height: 170px !important;
+  border-radius: 22px !important;
+  box-shadow: 0 20px 46px rgba(4,18,35,0.5),
+              0 0 0 1px rgba(255,255,255,0.10),
+              0 0 34px rgba(55,217,217,0.14) !important;
+  background: none !important;
+  padding: 0 !important;
+}
 
 /* ---------- 2) PALETA MÁS VIVA (se suma el violeta) ------------------- */
 .section-title,
