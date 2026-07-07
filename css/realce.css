@@ -15,19 +15,26 @@
   max-height: 158px !important;
   background: none !important;
   box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
   border-radius: 0 !important;
   padding: 0 !important;
-  /* Logo a todo color con contorno blanco: sombra suave (sin el glow cyan de antes). */
-  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.45)) !important;
+  /* SIN filtro: el glow cyan de premium.css (blur 26px) difuminaba el logo+texto
+     en un "cuadrado" feo. El logo ya trae su contorno blanco, no necesita glow. */
+  filter: none !important;
+  animation: none !important;   /* quita el "breathing" que pulsaba el glow */
 }
 .logo {
   background: none !important;
   box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
   border-radius: 0 !important;
   padding: 0 !important;
   max-height: 56px !important;
-  filter: drop-shadow(0 5px 12px rgba(0,0,0,0.42)) !important;
+  filter: none !important;
 }
+.logo:hover { filter: none !important; animation: none !important; }  /* sin glow/giro al pasar el mouse */
 
 /* ---------- NAV: separar la marca del menú ("LEÓN TELECOM" ↔ "Inicio") --- */
 /* El menú llenaba los 1200px y el logo quedaba pegado a "Inicio".
