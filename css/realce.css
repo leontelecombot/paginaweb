@@ -12,20 +12,32 @@
    La cara se ve gracias a los recortes transparentes que dejan pasar el
    fondo oscuro. Solo se le da un glow sutil para presencia premium. ------ */
 .hero-logo {
-  max-height: 150px !important;
+  max-height: 158px !important;
   background: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   padding: 0 !important;
-  filter: drop-shadow(0 10px 26px rgba(0,0,0,0.40))
-          drop-shadow(0 0 30px rgba(70,216,230,0.22)) !important;
+  /* Logo a todo color con contorno blanco: sombra suave (sin el glow cyan de antes). */
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.45)) !important;
 }
 .logo {
   background: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   padding: 0 !important;
-  filter: drop-shadow(0 0 9px rgba(70,216,230,0.30)) !important;
+  max-height: 56px !important;
+  filter: drop-shadow(0 5px 12px rgba(0,0,0,0.42)) !important;
+}
+
+/* ---------- NAV: separar la marca del menú ("LEÓN TELECOM" ↔ "Inicio") --- */
+/* El menú llenaba los 1200px y el logo quedaba pegado a "Inicio".
+   Damos un respiro garantizado y un poco más de ancho, y ajustamos el gap
+   del menú para que todo siga cabiendo en una sola línea. */
+.navbar .container-nav { max-width: 1280px !important; gap: 2.2rem !important; }
+.navbar .nav-menu { gap: 1.4rem !important; }
+@media (max-width: 768px) {
+  .logo { max-height: 46px !important; }
+  .navbar .container-nav { gap: 1rem !important; }
 }
 
 /* ---------- 2) PALETA MÁS VIVA (se suma el violeta) ------------------- */
