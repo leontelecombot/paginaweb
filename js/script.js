@@ -322,7 +322,7 @@ function initializeContactForm() {
             const encoded_message = encodeURIComponent(mensaje_whatsapp);
 
             // Enviar por WhatsApp al número real de León Telecom
-            const whatsapp_url = `https://wa.me/529511697346?text=${encoded_message}`;
+            const whatsapp_url = `https://wa.me/529512172814?text=${encoded_message}`;
 
             // Avisar y abrir WhatsApp con el mensaje ya escrito
             showNotification('Te llevamos a WhatsApp para enviar tu mensaje…', 'success');

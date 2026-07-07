@@ -10,7 +10,7 @@
   // Servidor del bot/panel (mismo valor que SERVER_BASE_URL en Render).
   var API = 'https://leontelecom-server.onrender.com/api/products';
   // Número de WhatsApp para los botones "Cotizar" (igual que el resto del sitio).
-  var WA = '529511697346';
+  var WA = '529512172814';
   // Orden preferido de las categorías en los filtros; lo nuevo se agrega al final.
   var PREFERRED = ['Streaming', 'Internet', 'Cómputo', 'TV', 'Cables', 'Iluminación', 'Limpieza'];
 
